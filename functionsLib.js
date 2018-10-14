@@ -108,6 +108,16 @@ const countEvenNumbers = function(numbers){
   evenNumbers = selectEvenNumbers(numbers);
   return evenNumbers.length;
 }
+
+const countElementsGreaterThanGivenNumber = function(array, number){
+  let count = 0;
+  for(let index = 0; index < array.length; index++){
+    if(array[index] > number){
+      count++;
+    }
+  }
+  return count;
+}
     
 
 exports.selectEvenNumbers = selectEvenNumbers;
@@ -122,3 +132,4 @@ exports.calculateAverageOfArrayElements = calculateAverageOfArrayElements;
 exports.mappingLengths = mappingLengths;
 exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;
+exports.countElementsGreaterThanGivenNumber = countElementsGreaterThanGivenNumber;

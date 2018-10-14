@@ -14,6 +14,7 @@ let { calculateAverageOfArrayElements } = lib;
 let { mappingLengths } = lib;
 let { countOddNumbers } = lib;
 let { countEvenNumbers } = lib;
+let { countElementsGreaterThanGivenNumber } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -61,3 +62,8 @@ assert.equal(countEvenNumbers([]), 0);
 assert.equal(countEvenNumbers([1]), 0);
 assert.equal(countEvenNumbers([2]), 1);
 assert.equal(countEvenNumbers([1,2]), 1);
+
+assert.equal(countElementsGreaterThanGivenNumber([3,4,5,6,1],4), 2);
+assert.equal(countElementsGreaterThanGivenNumber([33,44,5,6,1],0), 5);
+assert.equal(countElementsGreaterThanGivenNumber([],0), 0);
+assert.equal(countElementsGreaterThanGivenNumber([],8), 0);
