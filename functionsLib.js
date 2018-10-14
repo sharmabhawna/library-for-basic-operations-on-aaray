@@ -85,6 +85,12 @@ const findLowestArrayElement = function(numbers){
   return lowestNumber;
 }
 
+const calculateAverageOfArrayElements = function(numbers){
+  let sum = calculateSumOfArrayElements(numbers);
+  let numberOfElements = numbers.length;
+  return sum/numberOfElements;
+}
+
 
 
 
@@ -96,4 +102,5 @@ exports.selectEverySecondElement = selectEverySecondElement;
 exports.generateReverseFibonacci = generateReverseFibonacci;
 exports.findGreatestArrayElement = findGreatestArrayElement;
 exports.findLowestArrayElement = findLowestArrayElement;
+exports.calculateAverageOfArrayElements = calculateAverageOfArrayElements;
 
