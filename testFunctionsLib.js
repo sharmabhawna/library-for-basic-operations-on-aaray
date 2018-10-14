@@ -16,6 +16,7 @@ let { countOddNumbers } = lib;
 let { countEvenNumbers } = lib;
 let { countElementsGreaterThanGivenNumber } = lib;
 let { findIndex } = lib;
+let { extractDigits } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -75,3 +76,6 @@ assert.equal(findIndex([],0), "could not find");
 assert.equal(findIndex([],"a"), "could not find");
 assert.equal(findIndex(["a","b","c","d"],"c"), 2);
 assert.equal(findIndex(["a","b","c","d"],"z"), "could not find");
+
+assert.deepEqual(extractDigits(12345), [1,2,3,4,5]);
+assert.deepEqual(extractDigits(), []);

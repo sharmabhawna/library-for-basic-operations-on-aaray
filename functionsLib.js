@@ -132,7 +132,16 @@ const findIndex = function(array, element){
   return result;
 }
 
-    
+const extractDigits = function(number){
+  let digits = [];
+  while(number > 0){
+    let digit = number % 10;
+    number = Math.floor(number / 10);
+    digits.push(digit);
+  }
+  return reverseArrayElements(digits);
+}
+
 exports.selectEvenNumbers = selectEvenNumbers;
 exports.selectOddNumbers = selectOddNumbers;
 exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
@@ -147,5 +156,4 @@ exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;
 exports.countElementsGreaterThanGivenNumber = countElementsGreaterThanGivenNumber;
 exports.findIndex = findIndex;
-
-
+exports.extractDigits = extractDigits;
