@@ -142,6 +142,17 @@ const extractDigits = function(number){
   return reverseArrayElements(digits);
 }
 
+const findUnique = function(elements){
+  let uniqueElements = [];
+  for(let index = 0; index < elements.length; index++){
+    let hasElement = uniqueElements.includes(elements[index]);
+    if(!hasElement){
+      uniqueElements.push(elements[index]);
+    }
+  }
+  return uniqueElements;
+}
+
 exports.selectEvenNumbers = selectEvenNumbers;
 exports.selectOddNumbers = selectOddNumbers;
 exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
@@ -157,3 +168,4 @@ exports.countEvenNumbers = countEvenNumbers;
 exports.countElementsGreaterThanGivenNumber = countElementsGreaterThanGivenNumber;
 exports.findIndex = findIndex;
 exports.extractDigits = extractDigits;
+exports.findUnique = findUnique;

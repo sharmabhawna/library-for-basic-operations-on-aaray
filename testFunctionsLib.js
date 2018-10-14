@@ -17,6 +17,7 @@ let { countEvenNumbers } = lib;
 let { countElementsGreaterThanGivenNumber } = lib;
 let { findIndex } = lib;
 let { extractDigits } = lib;
+let { findUnique } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -79,3 +80,18 @@ assert.equal(findIndex(["a","b","c","d"],"z"), "could not find");
 
 assert.deepEqual(extractDigits(12345), [1,2,3,4,5]);
 assert.deepEqual(extractDigits(), []);
+
+assert.deepEqual(findUnique([]), []);
+assert.deepEqual(findUnique([1]), [1]);
+assert.deepEqual(findUnique([1,1]), [1]);
+assert.deepEqual(findUnique([1,2]), [1,2]);
+assert.deepEqual(findUnique([1,2,1]), [1,2]);
+assert.deepEqual(findUnique([1,2,3]), [1,2,3]);
+assert.deepEqual(findUnique([1,2,1,2]), [1,2]);
+assert.deepEqual(findUnique([""]), [""]);
+assert.deepEqual(findUnique(["a"]), ["a"]);
+assert.deepEqual(findUnique(["a","a"]), ["a"]);
+assert.deepEqual(findUnique(["a","b"]), ["a","b"]);
+assert.deepEqual(findUnique(["a","b","a"]), ["a","b"]);
+assert.deepEqual(findUnique(["a","b","c"]), ["a","b","c"]);
+assert.deepEqual(findUnique(["a","b","a","b"]), ["a","b"]);
