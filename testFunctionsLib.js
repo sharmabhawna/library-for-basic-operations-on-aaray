@@ -4,6 +4,7 @@ const assert = require('assert');
 
 let { selectEvenNumber } = lib;
 let { selectOddNumber } = lib;
+let { reverseArrayElements } = lib;
 let { calculateSumOfArrayElements } = lib;
 
 assert.deepEqual(selectOddNumber([]), []);
@@ -19,5 +20,8 @@ assert.equal(calculateSumOfArrayElements([1,2]), 3);
 assert.equal(calculateSumOfArrayElements([-2,2]), 0);
 assert.equal(calculateSumOfArrayElements(["a",1]), "a1");
 assert.equal(calculateSumOfArrayElements(["a","b"]), "ab");
+
+assert.deepEqual(reverseArrayElements([1,2]), [2,1]);
+assert.deepEqual(reverseArrayElements(["a","b"]), ["b","a"]);
 
 

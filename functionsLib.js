@@ -29,10 +29,19 @@ const calculateSumOfArrayElements = function(numbers){
   return sum;
 }
 
+const reverseArrayElements = function(numbers){
+  let result = [];
+  for(let index = numbers.length-1; index >= 0; index--){
+    result.push(numbers[index]);
+  }
+  return result;
+}
+
 
 
 
 exports.selectEvenNumber = selectEvenNumber;
 exports.selectOddNumber = selectOddNumber;
 exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
+exports.reverseArrayElements = reverseArrayElements;
 
