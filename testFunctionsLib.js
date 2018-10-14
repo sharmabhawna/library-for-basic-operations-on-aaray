@@ -7,6 +7,7 @@ let { selectOddNumber } = lib;
 let { calculateSumOfArrayElements } = lib;
 let { reverseArrayElements } = lib;
 let { selectEverySecondElement } = lib;
+let { generateReverseFibonacci } = lib;
 
 assert.deepEqual(selectOddNumber([]), []);
 assert.deepEqual(selectOddNumber([1]), [1]);
@@ -27,5 +28,8 @@ assert.deepEqual(reverseArrayElements(["a","b"]), ["b","a"]);
 
 assert.deepEqual(selectEverySecondElement([1,2,3]), [1,3]);
 assert.deepEqual(selectEverySecondElement(["a","b","c"]), ["a","c"]);
+
+assert.deepEqual(generateReverseFibonacci(5), [3,2,1,1,0]);
+assert.deepEqual(generateReverseFibonacci(8), [13,8,5,3,2,1,1,0]);
 
 

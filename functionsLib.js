@@ -47,6 +47,24 @@ const selectEverySecondElement = function(numbers){
   return result;
 }
 
+const generateFibonacci = function(length){
+  let firstNum = 0;
+  let secondNum = 1;
+  let result = [firstNum,secondNum];
+  for(let count = 3; count <= length; count++){
+    let nextNum = firstNum + secondNum;
+    result.push(nextNum);
+    firstNum = secondNum;
+    secondNum = nextNum;
+  }
+  return result;
+}
+ 
+const generateReverseFibonacci = function(length){
+  let fibonacci = generateFibonacci(length);
+  return reverseArrayElements(fibonacci);
+}
+
 
 
 
@@ -55,4 +73,5 @@ exports.selectOddNumber = selectOddNumber;
 exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
 exports.reverseArrayElements = reverseArrayElements;
 exports.selectEverySecondElement = selectEverySecondElement;
+exports.generateReverseFibonacci = generateReverseFibonacci;
 
