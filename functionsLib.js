@@ -65,6 +65,16 @@ const generateReverseFibonacci = function(length){
   return reverseArrayElements(fibonacci);
 }
 
+const findGreatestArrayElement = function(numbers){
+  let greatestNumber = numbers[0];
+  for(let index = 1; index < numbers.length; index++){
+    if(numbers[index] > greatestNumber){
+      greatestNumber = numbers[index];
+    }
+  }
+  return greatestNumber;
+}
+
 
 
 
@@ -74,4 +84,5 @@ exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
 exports.reverseArrayElements = reverseArrayElements;
 exports.selectEverySecondElement = selectEverySecondElement;
 exports.generateReverseFibonacci = generateReverseFibonacci;
+exports.findGreatestArrayElement = findGreatestArrayElement;
 
