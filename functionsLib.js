@@ -118,8 +118,21 @@ const countElementsGreaterThanGivenNumber = function(array, number){
   }
   return count;
 }
-    
 
+const findIndex = function(array, element){
+  let result = "could not find";
+  for(let index = 0; index < array.length; index++){
+    if(array[index] == element){
+      result = index;
+    }
+    if(result != "could not find"){
+      return result;
+    }
+  }
+  return result;
+}
+
+    
 exports.selectEvenNumbers = selectEvenNumbers;
 exports.selectOddNumbers = selectOddNumbers;
 exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
@@ -133,3 +146,6 @@ exports.mappingLengths = mappingLengths;
 exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;
 exports.countElementsGreaterThanGivenNumber = countElementsGreaterThanGivenNumber;
+exports.findIndex = findIndex;
+
+

@@ -15,6 +15,7 @@ let { mappingLengths } = lib;
 let { countOddNumbers } = lib;
 let { countEvenNumbers } = lib;
 let { countElementsGreaterThanGivenNumber } = lib;
+let { findIndex } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -67,3 +68,10 @@ assert.equal(countElementsGreaterThanGivenNumber([3,4,5,6,1],4), 2);
 assert.equal(countElementsGreaterThanGivenNumber([33,44,5,6,1],0), 5);
 assert.equal(countElementsGreaterThanGivenNumber([],0), 0);
 assert.equal(countElementsGreaterThanGivenNumber([],8), 0);
+
+assert.equal(findIndex([3,4,5,6,1],0), "could not find");
+assert.equal(findIndex([3,4,5,6,1],4), 1);
+assert.equal(findIndex([],0), "could not find");
+assert.equal(findIndex([],"a"), "could not find");
+assert.equal(findIndex(["a","b","c","d"],"c"), 2);
+assert.equal(findIndex(["a","b","c","d"],"z"), "could not find");
