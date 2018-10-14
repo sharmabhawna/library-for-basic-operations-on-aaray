@@ -11,6 +11,7 @@ let { generateReverseFibonacci } = lib;
 let { findGreatestArrayElement } = lib;
 let { findLowestArrayElement } = lib;
 let { calculateAverageOfArrayElements } = lib;
+let { mappingLengths } = lib;
 
 assert.deepEqual(selectOddNumber([]), []);
 assert.deepEqual(selectOddNumber([1]), [1]);
@@ -44,4 +45,7 @@ assert.equal(findLowestArrayElement([10,2,5]), 2);
 assert.equal(calculateAverageOfArrayElements([1,2,3]), 2);
 assert.equal(calculateAverageOfArrayElements([60,60,60]), 60);
 
+assert.deepEqual(mappingLengths(["a","be"]), [1,2]);
+assert.deepEqual(mappingLengths(["","programming"]), [0,11]);
+assert.deepEqual(mappingLengths(["mary","had","a","little","lamb"]), [4,3,1,6,4]);
 

@@ -91,8 +91,14 @@ const calculateAverageOfArrayElements = function(numbers){
   return sum/numberOfElements;
 }
 
-
-
+const mappingLengths = function(array){
+  let result = [];
+  for(let index = 0; index < array.length; index++){
+    result.push(array[index].length);
+  }
+  return result;
+}
+    
 
 exports.selectEvenNumber = selectEvenNumber;
 exports.selectOddNumber = selectOddNumber;
@@ -103,4 +109,5 @@ exports.generateReverseFibonacci = generateReverseFibonacci;
 exports.findGreatestArrayElement = findGreatestArrayElement;
 exports.findLowestArrayElement = findLowestArrayElement;
 exports.calculateAverageOfArrayElements = calculateAverageOfArrayElements;
+exports.mappingLengths = mappingLengths;
 
