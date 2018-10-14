@@ -21,6 +21,18 @@ const selectOddNumber = function(numbers){
   return segregateEvenOdd("odd" , numbers);
 }
 
+const calculateSumOfArrayElements = function(numbers){
+  let sum = numbers[0];
+  for(let index = 1; index < numbers.length; index++){
+    sum = sum + numbers[index];
+  }
+  return sum;
+}
+
+
+
 
 exports.selectEvenNumber = selectEvenNumber;
 exports.selectOddNumber = selectOddNumber;
+exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
+
