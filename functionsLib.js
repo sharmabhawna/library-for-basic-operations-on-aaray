@@ -91,17 +91,24 @@ const calculateAverageOfArrayElements = function(numbers){
   return sum/numberOfElements;
 }
 
-const mappingLengths = function(array){
+const mappingLengths = function(stringArray){
   let result = [];
-  for(let index = 0; index < array.length; index++){
-    result.push(array[index].length);
+  for(let index = 0; index < stringArray.length; index++){
+    result.push(stringArray[index].length);
   }
   return result;
 }
+
+const countOddNumbers = function(numbers){
+  oddNumbers = selectOddNumbers(numbers);
+  return oddNumbers.length;
+}
+
+
     
 
-exports.selectEvenNumber = selectEvenNumber;
-exports.selectOddNumber = selectOddNumber;
+exports.selectEvenNumbers = selectEvenNumbers;
+exports.selectOddNumbers = selectOddNumbers;
 exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
 exports.reverseArrayElements = reverseArrayElements;
 exports.selectEverySecondElement = selectEverySecondElement;
@@ -110,4 +117,4 @@ exports.findGreatestArrayElement = findGreatestArrayElement;
 exports.findLowestArrayElement = findLowestArrayElement;
 exports.calculateAverageOfArrayElements = calculateAverageOfArrayElements;
 exports.mappingLengths = mappingLengths;
-
+exports.countOddNumbers = countOddNumbers;

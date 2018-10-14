@@ -2,8 +2,8 @@ const lib = require('./functionsLib.js');
 const assert = require('assert');
 
 
-let { selectEvenNumber } = lib;
-let { selectOddNumber } = lib;
+let { selectEvenNumbers } = lib;
+let { selectOddNumbers } = lib;
 let { calculateSumOfArrayElements } = lib;
 let { reverseArrayElements } = lib;
 let { selectEverySecondElement } = lib;
@@ -12,15 +12,16 @@ let { findGreatestArrayElement } = lib;
 let { findLowestArrayElement } = lib;
 let { calculateAverageOfArrayElements } = lib;
 let { mappingLengths } = lib;
+let { countOddNumbers } = lib;
 
-assert.deepEqual(selectOddNumber([]), []);
-assert.deepEqual(selectOddNumber([1]), [1]);
-assert.deepEqual(selectOddNumber([2]), []);
-assert.deepEqual(selectOddNumber([1,2]), [1]);
-assert.deepEqual(selectEvenNumber([]), []);
-assert.deepEqual(selectEvenNumber([1]), []);
-assert.deepEqual(selectEvenNumber([2]), [2]);
-assert.deepEqual(selectEvenNumber([1,2]), [2]);
+assert.deepEqual(selectOddNumbers([]), []);
+assert.deepEqual(selectOddNumbers([1]), [1]);
+assert.deepEqual(selectOddNumbers([2]), []);
+assert.deepEqual(selectOddNumbers([1,2]), [1]);
+assert.deepEqual(selectEvenNumbers([]), []);
+assert.deepEqual(selectEvenNumbers([1]), []);
+assert.deepEqual(selectEvenNumbers([2]), [2]);
+assert.deepEqual(selectEvenNumbers([1,2]), [2]);
 
 assert.equal(calculateSumOfArrayElements([1,2]), 3);
 assert.equal(calculateSumOfArrayElements([-2,2]), 0);
@@ -48,4 +49,9 @@ assert.equal(calculateAverageOfArrayElements([60,60,60]), 60);
 assert.deepEqual(mappingLengths(["a","be"]), [1,2]);
 assert.deepEqual(mappingLengths(["","programming"]), [0,11]);
 assert.deepEqual(mappingLengths(["mary","had","a","little","lamb"]), [4,3,1,6,4]);
+
+assert.equal(countOddNumbers([]), 0);
+assert.equal(countOddNumbers([1]), 1);
+assert.equal(countOddNumbers([2]), 0);
+assert.equal(countOddNumbers([1,2]), 1);
 
