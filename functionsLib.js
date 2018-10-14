@@ -37,6 +37,16 @@ const reverseArrayElements = function(numbers){
   return result;
 }
 
+const selectEverySecondElement = function(numbers){
+  let result = [];
+  for(let index = 0; index < numbers.length; index++){
+    if(isEven(index)){
+      result.push(numbers[index]);
+    }
+  }
+  return result;
+}
+
 
 
 
@@ -44,4 +54,5 @@ exports.selectEvenNumber = selectEvenNumber;
 exports.selectOddNumber = selectOddNumber;
 exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
 exports.reverseArrayElements = reverseArrayElements;
+exports.selectEverySecondElement = selectEverySecondElement;
 
