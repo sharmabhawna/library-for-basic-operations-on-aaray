@@ -75,6 +75,16 @@ const findGreatestArrayElement = function(numbers){
   return greatestNumber;
 }
 
+const findLowestArrayElement = function(numbers){
+  let lowestNumber = numbers[0];
+  for(let index = 1; index < numbers.length; index++){
+    if(numbers[index] < lowestNumber){
+      lowestNumber = numbers[index];
+    }
+  }
+  return lowestNumber;
+}
+
 
 
 
@@ -85,4 +95,5 @@ exports.reverseArrayElements = reverseArrayElements;
 exports.selectEverySecondElement = selectEverySecondElement;
 exports.generateReverseFibonacci = generateReverseFibonacci;
 exports.findGreatestArrayElement = findGreatestArrayElement;
+exports.findLowestArrayElement = findLowestArrayElement;
 

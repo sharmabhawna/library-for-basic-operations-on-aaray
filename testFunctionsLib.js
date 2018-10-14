@@ -9,6 +9,7 @@ let { reverseArrayElements } = lib;
 let { selectEverySecondElement } = lib;
 let { generateReverseFibonacci } = lib;
 let { findGreatestArrayElement } = lib;
+let { findLowestArrayElement } = lib;
 
 assert.deepEqual(selectOddNumber([]), []);
 assert.deepEqual(selectOddNumber([1]), [1]);
@@ -35,5 +36,8 @@ assert.deepEqual(generateReverseFibonacci(8), [13,8,5,3,2,1,1,0]);
 
 assert.equal(findGreatestArrayElement([1,2,10]), 10);
 assert.equal(findGreatestArrayElement([10,2,5]), 10);
+
+assert.equal(findLowestArrayElement([1,2,10]), 1);
+assert.equal(findLowestArrayElement([10,2,5]), 2);
 
 
