@@ -104,7 +104,10 @@ const countOddNumbers = function(numbers){
   return oddNumbers.length;
 }
 
-
+const countEvenNumbers = function(numbers){
+  evenNumbers = selectEvenNumbers(numbers);
+  return evenNumbers.length;
+}
     
 
 exports.selectEvenNumbers = selectEvenNumbers;
@@ -118,3 +121,4 @@ exports.findLowestArrayElement = findLowestArrayElement;
 exports.calculateAverageOfArrayElements = calculateAverageOfArrayElements;
 exports.mappingLengths = mappingLengths;
 exports.countOddNumbers = countOddNumbers;
+exports.countEvenNumbers = countEvenNumbers;
