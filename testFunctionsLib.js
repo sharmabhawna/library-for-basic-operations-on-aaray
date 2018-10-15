@@ -19,6 +19,7 @@ let { findIndex } = lib;
 let { extractDigits } = lib;
 let { findUnique } = lib;
 let { findUnion } = lib;
+let { findIntersection } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -115,4 +116,24 @@ assert.deepEqual(findUnion(["a","b"],["b"]), ["a","b"]);
 assert.deepEqual(findUnion(["a","b"],["a","b"]), ["a","b"]);
 assert.deepEqual(findUnion(["b"],["a","b"]), ["b","a"]);
 assert.deepEqual(findUnion(["a","b"],["c","d"]), ["a","b","c","d"]);
+
+assert.deepEqual(findIntersection([],[]), []);
+assert.deepEqual(findIntersection([1],[]), []);
+assert.deepEqual(findIntersection([],[1]), []);
+assert.deepEqual(findIntersection([1],[1]), [1]);
+assert.deepEqual(findIntersection([1,2],[2]), [2]);
+assert.deepEqual(findIntersection([1,2],[1,2]), [1,2]);
+assert.deepEqual(findIntersection([2],[1,2]), [2]);
+assert.deepEqual(findIntersection([1,2],[3,4]), []);
+assert.deepEqual(findIntersection([""],[]), []);
+assert.deepEqual(findIntersection([],[""]), []);
+assert.deepEqual(findIntersection([""],[""]), [""]);
+assert.deepEqual(findIntersection(["a"],[]), []);
+assert.deepEqual(findIntersection([],["a"]), []);
+assert.deepEqual(findIntersection(["a"],["a"]), ["a"]);
+assert.deepEqual(findIntersection(["a","b"],["b"]), ["b"]);
+assert.deepEqual(findIntersection(["a","b"],["a","b"]), ["a","b"]);
+assert.deepEqual(findIntersection(["b"],["a","b"]), ["b"]);
+assert.deepEqual(findIntersection([1,2,2,3],[1,3]),[1,3]);
+assert.deepEqual(findIntersection([1,2,2,3],[1,2,3,3]),[1,2,3]);
 

@@ -160,6 +160,16 @@ const findUnion = function(firstArray, secondArray){
   return findUnique(firstArray);
 }
 
+const findIntersection = function(firstArray, secondArray){
+  let commonElements = [];
+  for(let index = 0; index < firstArray.length; index++){
+    if(secondArray.includes(firstArray[index])){
+      commonElements.push(firstArray[index]);
+    }
+  }
+  return findUnique(commonElements);
+}
+
 
 
 exports.selectEvenNumbers = selectEvenNumbers;
@@ -179,3 +189,4 @@ exports.findIndex = findIndex;
 exports.extractDigits = extractDigits;
 exports.findUnique = findUnique;
 exports.findUnion = findUnion;
+exports.findIntersection = findIntersection;
