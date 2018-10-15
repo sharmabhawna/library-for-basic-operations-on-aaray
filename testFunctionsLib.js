@@ -18,6 +18,7 @@ let { countElementsGreaterThanGivenNumber } = lib;
 let { findIndex } = lib;
 let { extractDigits } = lib;
 let { findUnique } = lib;
+let { findUnion } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -95,3 +96,23 @@ assert.deepEqual(findUnique(["a","b"]), ["a","b"]);
 assert.deepEqual(findUnique(["a","b","a"]), ["a","b"]);
 assert.deepEqual(findUnique(["a","b","c"]), ["a","b","c"]);
 assert.deepEqual(findUnique(["a","b","a","b"]), ["a","b"]);
+
+assert.deepEqual(findUnion([],[]), []);
+assert.deepEqual(findUnion([1],[]), [1]);
+assert.deepEqual(findUnion([],[1]), [1]);
+assert.deepEqual(findUnion([1],[1]), [1]);
+assert.deepEqual(findUnion([1,2],[2]), [1,2]);
+assert.deepEqual(findUnion([1,2],[1,2]), [1,2]);
+assert.deepEqual(findUnion([2],[1,2]), [2,1]);
+assert.deepEqual(findUnion([1,2],[3,4]), [1,2,3,4]);
+assert.deepEqual(findUnion([""],[]), [""]);
+assert.deepEqual(findUnion([],[""]), [""]);
+assert.deepEqual(findUnion([""],[""]), [""]);
+assert.deepEqual(findUnion(["a"],[]), ["a"]);
+assert.deepEqual(findUnion([],["a"]), ["a"]);
+assert.deepEqual(findUnion(["a"],["a"]), ["a"]);
+assert.deepEqual(findUnion(["a","b"],["b"]), ["a","b"]);
+assert.deepEqual(findUnion(["a","b"],["a","b"]), ["a","b"]);
+assert.deepEqual(findUnion(["b"],["a","b"]), ["b","a"]);
+assert.deepEqual(findUnion(["a","b"],["c","d"]), ["a","b","c","d"]);
+

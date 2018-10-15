@@ -153,6 +153,15 @@ const findUnique = function(elements){
   return uniqueElements;
 }
 
+const findUnion = function(firstArray, secondArray){
+  for(let index = 0; index < secondArray.length; index++){
+    firstArray.push(secondArray[index]);
+  }
+  return findUnique(firstArray);
+}
+
+
+
 exports.selectEvenNumbers = selectEvenNumbers;
 exports.selectOddNumbers = selectOddNumbers;
 exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
@@ -169,3 +178,4 @@ exports.countElementsGreaterThanGivenNumber = countElementsGreaterThanGivenNumbe
 exports.findIndex = findIndex;
 exports.extractDigits = extractDigits;
 exports.findUnique = findUnique;
+exports.findUnion = findUnion;
