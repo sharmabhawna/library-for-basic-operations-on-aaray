@@ -23,6 +23,7 @@ let { findIntersection } = lib;
 let { isSubset } = lib;
 let { zipArrays } = lib;
 let { findDifference } = lib;
+let { countElementsLesserThanGivenNumber} = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -76,6 +77,10 @@ assert.equal(countElementsGreaterThanGivenNumber([33,44,5,6,1],0), 5);
 assert.equal(countElementsGreaterThanGivenNumber([],0), 0);
 assert.equal(countElementsGreaterThanGivenNumber([],8), 0);
 
+assert.equal(countElementsLesserThanGivenNumber([3,4,5,6,1],4), 2);
+assert.equal(countElementsLesserThanGivenNumber([33,44,5,6,1],0), 0);
+assert.equal(countElementsLesserThanGivenNumber([],0), 0);
+assert.equal(countElementsLesserThanGivenNumber([1,2,3,10,11],8), 3);
 
 assert.equal(findIndex([3,4,5,6,1],0), "could not find");
 assert.equal(findIndex([3,4,5,6,1],4), 1);

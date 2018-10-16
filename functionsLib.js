@@ -119,6 +119,16 @@ const countElementsGreaterThanGivenNumber = function(array, number){
   return count;
 }
 
+const countElementsLesserThanGivenNumber = function(array, number){
+  let count = 0;
+  for(let index = 0; index < array.length; index++){
+    if(array[index] < number){
+      count++;
+    }
+  }
+  return count;
+}
+
 const findIndex = function(array, element){
   let result = "could not find";
   for(let index = 0; index < array.length; index++){
@@ -212,6 +222,7 @@ exports.mappingLengths = mappingLengths;
 exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;
 exports.countElementsGreaterThanGivenNumber = countElementsGreaterThanGivenNumber;
+exports.countElementsLesserThanGivenNumber = countElementsLesserThanGivenNumber;
 exports.findIndex = findIndex;
 exports.extractDigits = extractDigits;
 exports.findUnique = findUnique;
