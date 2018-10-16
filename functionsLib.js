@@ -179,6 +179,14 @@ const isSubset = function(superSet, subSet){
   return true;
 }
 
+const zipArrays = function(firstArray, secondArray){
+  let result = [];
+  for(let index = 0; index < secondArray.length; index++){
+    result[index] = [firstArray[index],secondArray[index]];
+  }
+  return result;
+}
+
 
 
 exports.selectEvenNumbers = selectEvenNumbers;
@@ -201,3 +209,4 @@ exports.findUnion = findUnion;
 exports.findIntersection = findIntersection;
  
 exports.isSubset = isSubset;
+exports.zipArrays = zipArrays;

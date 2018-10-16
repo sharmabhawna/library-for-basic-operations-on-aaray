@@ -21,6 +21,7 @@ let { findUnique } = lib;
 let { findUnion } = lib;
 let { findIntersection } = lib;
 let { isSubset } = lib;
+let { zipArrays } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -142,3 +143,5 @@ assert.equal(isSubset([1,2,3,4],[1,4]), true);
 assert.equal(isSubset([],[]), true);
 assert.equal(isSubset(["a"],[]), true);
 
+assert.deepEqual(zipArrays([1,2],[3,4]), [[1,3],[2,4]]);
+assert.deepEqual(zipArrays(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);
