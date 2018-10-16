@@ -20,6 +20,7 @@ let { extractDigits } = lib;
 let { findUnique } = lib;
 let { findUnion } = lib;
 let { findIntersection } = lib;
+let { isSubset } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -136,4 +137,8 @@ assert.deepEqual(findIntersection(["a","b"],["a","b"]), ["a","b"]);
 assert.deepEqual(findIntersection(["b"],["a","b"]), ["b"]);
 assert.deepEqual(findIntersection([1,2,2,3],[1,3]),[1,3]);
 assert.deepEqual(findIntersection([1,2,2,3],[1,2,3,3]),[1,2,3]);
+
+assert.equal(isSubset([1,2,3,4],[1,4]), true);
+assert.equal(isSubset([],[]), true);
+assert.equal(isSubset(["a"],[]), true);
 

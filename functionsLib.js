@@ -170,6 +170,15 @@ const findIntersection = function(firstArray, secondArray){
   return findUnique(commonElements);
 }
 
+const isSubset = function(superSet, subSet){
+  for(let index = 0; index < subSet.length; index++){
+    if(!superSet.includes(subSet[index])){
+      return false;
+    }
+  }
+  return true;
+}
+
 
 
 exports.selectEvenNumbers = selectEvenNumbers;
@@ -190,3 +199,5 @@ exports.extractDigits = extractDigits;
 exports.findUnique = findUnique;
 exports.findUnion = findUnion;
 exports.findIntersection = findIntersection;
+ 
+exports.isSubset = isSubset;
