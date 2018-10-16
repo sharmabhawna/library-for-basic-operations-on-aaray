@@ -207,7 +207,21 @@ const zipArrays = function(firstArray, secondArray){
   return result;
 }
 
-
+const partitionArray = function(array,number){
+  let result = [];
+  let greaterArray = [];
+  let lesserArray = [];
+  for(let index = 0; index < array.length; index++){
+    if(array[index] <= number){
+      lesserArray.push(array[index]);
+    } else{
+      greaterArray.push(array[index]);
+    }
+  }
+    result.push(lesserArray);
+    result.push(greaterArray);
+  return result;
+}
 
 exports.selectEvenNumbers = selectEvenNumbers;
 exports.selectOddNumbers = selectOddNumbers;
@@ -228,7 +242,7 @@ exports.extractDigits = extractDigits;
 exports.findUnique = findUnique;
 exports.findUnion = findUnion;
 exports.findIntersection = findIntersection;
- 
 exports.findDifference = findDifference;
 exports.isSubset = isSubset;
 exports.zipArrays = zipArrays;
+exports.partitionArray = partitionArray;

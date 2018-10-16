@@ -24,6 +24,7 @@ let { isSubset } = lib;
 let { zipArrays } = lib;
 let { findDifference } = lib;
 let { countElementsLesserThanGivenNumber} = lib;
+let { partitionArray } = lib;
 
 assert.deepEqual(selectOddNumbers([]), []);
 assert.deepEqual(selectOddNumbers([1]), [1]);
@@ -155,3 +156,6 @@ assert.equal(isSubset(["a"],[]), true);
 
 assert.deepEqual(zipArrays([1,2],[3,4]), [[1,3],[2,4]]);
 assert.deepEqual(zipArrays(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);
+
+assert.deepEqual(partitionArray([1,2,3,4,5],3), [[1,2,3],[4,5]]);
+assert.deepEqual(partitionArray([11,29,3,40,5,9],10), [[3,5,9],[11,29,40]]);
