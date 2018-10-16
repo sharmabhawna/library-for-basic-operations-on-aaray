@@ -170,6 +170,16 @@ const findIntersection = function(firstArray, secondArray){
   return findUnique(commonElements);
 }
 
+const findDifference = function(firstArray, secondArray){
+  let result = [];
+  for(let index = 0; index < firstArray.length; index++){
+    if(!secondArray.includes(firstArray[index])){
+      result.push(firstArray[index]);
+    }
+  }
+  return findUnique(result);
+}
+
 const isSubset = function(superSet, subSet){
   for(let index = 0; index < subSet.length; index++){
     if(!superSet.includes(subSet[index])){
@@ -208,5 +218,6 @@ exports.findUnique = findUnique;
 exports.findUnion = findUnion;
 exports.findIntersection = findIntersection;
  
+exports.findDifference = findDifference;
 exports.isSubset = isSubset;
 exports.zipArrays = zipArrays;
