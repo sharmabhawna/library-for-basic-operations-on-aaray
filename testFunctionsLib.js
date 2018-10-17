@@ -15,6 +15,7 @@ let { mappingLengths } = lib;
 let { countOddNumbers } = lib;
 let { countEvenNumbers } = lib;
 let { countElementsGreaterThanGivenNumber } = lib;
+let { countElementsLesserThanGivenNumber} = lib;
 let { findIndex } = lib;
 let { extractDigits } = lib;
 let { findUnique } = lib;

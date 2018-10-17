@@ -110,24 +110,18 @@ const countEvenNumbers = function(numbers){
 }
 
 const countElementsGreaterThanGivenNumber = function(array, number){
-  let count = 0;
-  for(let index = 0; index < array.length; index++){
-    if(array[index] > number){
-      count++;
-    }
-  }
-  return count;
+  let greaterNumbers = partitionArray(array,number)[1];
+  return greaterNumbers.length;
 }
 
 const countElementsLesserThanGivenNumber = function(array, number){
-  let count = 0;
-  for(let index = 0; index < array.length; index++){
-    if(array[index] < number){
-      count++;
-    }
+  let lesserNumbers = partitionArray(array,number)[0];
+  if(lesserNumbers.includes(number)){
+    return lesserNumbers.length-1;
   }
-  return count;
+  return lesserNumbers.length;
 }
+
 
 const findIndex = function(array, element){
   let result = "could not find";
@@ -209,17 +203,16 @@ const zipArrays = function(firstArray, secondArray){
 
 const partitionArray = function(array,number){
   let result = [];
-  let greaterArray = [];
-  let lesserArray = [];
+  let segregatedNumbers = { greaterNumbers : [], lesserNumbers : [] };
   for(let index = 0; index < array.length; index++){
+    let key = "greaterNumbers";
     if(array[index] <= number){
-      lesserArray.push(array[index]);
-    } else{
-      greaterArray.push(array[index]);
+      key = "lesserNumbers";
     }
+    segregatedNumbers[key].push(array[index]);
   }
-    result.push(lesserArray);
-    result.push(greaterArray);
+  result.push(segregatedNumbers["lesserNumbers"]);
+  result.push(segregatedNumbers["greaterNumbers"]);
   return result;
 }
 
