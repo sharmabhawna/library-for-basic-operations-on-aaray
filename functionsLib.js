@@ -48,10 +48,10 @@ const selectEverySecondElement = function(numbers){
 }
 
 const generateFibonacci = function(length){
-  let firstNum = 0;
+  let result = [];
+  let firstNum = -1;
   let secondNum = 1;
-  let result = [firstNum,secondNum];
-  for(let count = 3; count <= length; count++){
+  for(let count = 0; count < length; count++){
     let nextNum = firstNum + secondNum;
     result.push(nextNum);
     firstNum = secondNum;
