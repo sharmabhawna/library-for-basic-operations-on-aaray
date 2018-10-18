@@ -156,8 +156,16 @@ assert.equal(isSubset([1,2,3,4],[1,4]), true);
 assert.equal(isSubset([],[]), true);
 assert.equal(isSubset(["a"],[]), true);
 
-assert.deepEqual(zipArrays([1,2],[3,4]), [[1,3],[2,4]]);
-assert.deepEqual(zipArrays(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);
+assert.deepEqual(zip([1,2],[3,4]), [[1,3],[2,4]]);
+assert.deepEqual(zip(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);
 
-assert.deepEqual(partitionArray([1,2,3,4,5],3), [[1,2,3],[4,5]]);
-assert.deepEqual(partitionArray([11,29,3,40,5,9],10), [[3,5,9],[11,29,40]]);
+assert.deepEqual(partition([1,2,3,4,5],3), [[1,2,3],[4,5]]);
+assert.deepEqual(partition([11,29,3,40,5,9],10), [[3,5,9],[11,29,40]]);
+
+assert.deepEqual(ascendingSort([3,1,5,2]), [1,2,3,5]);
+assert.deepEqual(ascendingSort([9,5,0,3,1]), [0,1,3,5,9]);
+assert.deepEqual(ascendingSort([-9,5,0,-3,1]), [-9,-3,0,1,5]);
+
+assert.deepEqual(descendingSort([3,1,5,2]), [5,3,2,1]);
+assert.deepEqual(descendingSort([9,5,0,3,1]), [9,5,3,1,0]);
+assert.deepEqual(descendingSort([-9,5,0,-3,1]), [5,1,0,-3,-9]);

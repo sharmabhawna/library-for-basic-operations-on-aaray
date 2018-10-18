@@ -216,20 +216,47 @@ const partitionArray = function(array,number){
   return result;
 }
 
+const ascendingSort = function(numbers){
+  for(let i = 0; i < numbers.length; i++){
+    for(let j = 0; j < numbers.length-i; j++){
+      if(numbers[j] > numbers[j+1]){
+        let temp = numbers[j];
+        numbers[j] = numbers[j+1];
+        numbers[j+1] = temp;
+      }
+    }
+  }
+  return numbers;
+}
+
+const descendingSort = function(numbers){
+  for(let i = 0; i < numbers.length; i++){
+    for(let j = 0; j < numbers.length-i; j++){
+      if(numbers[j] < numbers[j+1]){
+        let temp = numbers[j];
+        numbers[j] = numbers[j+1];
+        numbers[j+1] = temp;
+      }
+    }
+  }
+  return numbers;
+}
+
+
 exports.selectEvenNumbers = selectEvenNumbers;
 exports.selectOddNumbers = selectOddNumbers;
-exports.calculateSumOfArrayElements = calculateSumOfArrayElements;
-exports.reverseArrayElements = reverseArrayElements;
+exports.calculateSum = calculateSum;
+exports.reverse = reverse;
 exports.selectEverySecondElement = selectEverySecondElement;
 exports.generateReverseFibonacci = generateReverseFibonacci;
-exports.findGreatestArrayElement = findGreatestArrayElement;
-exports.findLowestArrayElement = findLowestArrayElement;
-exports.calculateAverageOfArrayElements = calculateAverageOfArrayElements;
-exports.mappingLengths = mappingLengths;
+exports.findGreatestNumber = findGreatestNumber;
+exports.findLowestNumber = findLowestNumber;
+exports.calculateAverage = calculateAverage;
+exports.mapLengths = mapLengths;
 exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;
-exports.countElementsGreaterThanGivenNumber = countElementsGreaterThanGivenNumber;
-exports.countElementsLesserThanGivenNumber = countElementsLesserThanGivenNumber;
+exports.countNumbersGreaterThan = countNumbersGreaterThan;
+exports.countNumbersLesserThan = countNumbersLesserThan;
 exports.findIndex = findIndex;
 exports.extractDigits = extractDigits;
 exports.findUnique = findUnique;
@@ -237,5 +264,7 @@ exports.findUnion = findUnion;
 exports.findIntersection = findIntersection;
 exports.findDifference = findDifference;
 exports.isSubset = isSubset;
-exports.zipArrays = zipArrays;
-exports.partitionArray = partitionArray;
+exports.zip = zip;
+exports.partition = partition;
+exports.ascendingSort = ascendingSort;
+exports.descendingSort = descendingSort;
