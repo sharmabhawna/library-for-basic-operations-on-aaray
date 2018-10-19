@@ -1,49 +1,47 @@
-const segregateEvenOdd = function(numberType, numbers){
-  let evenOddNumbers = { evenNumbers : [], oddNumbers : [] }
+const segregateEvenOdd = function(numbers){
+  let segregatedNumbers = { evenNumbers : [], oddNumbers : [] }
   let selectKey = { true : "evenNumbers", false : "oddNumbers" };
   for(let index = 0; index < numbers.length; index++){
-     let key = selectKey[isEven(numbers[index])];
-    evenOddNumbers[key].push(numbers[index]);
+    let key = selectKey[isEven(numbers[index])];
+    segregatedNumbers[key].push(numbers[index]);
   }
-  let requiredKey = numberType + "Numbers";
-  return evenOddNumbers[requiredKey];
+  return segregatedNumbers;
 }
 
 const isEven = function(number){
   return (number % 2 == 0);
 }
 
-const selectEvenNumber = function(numbers){
-  return segregateEvenOdd("even" , numbers);
+const selectEvenNumbers = function(numbers){
+  return segregateEvenOdd(numbers)["evenNumbers"];
 }
 
-const selectOddNumber = function(numbers){
-  return segregateEvenOdd("odd" , numbers);
+const selectOddNumbers = function(numbers){
+  return segregateEvenOdd(numbers)["oddNumbers"];
 }
 
-const calculateSumOfArrayElements = function(numbers){
-  let sum = numbers[0];
-  for(let index = 1; index < numbers.length; index++){
+const calculateSum = function(numbers){
+  let sum = 0;
+  for(let index = 0; index < numbers.length; index++){
     sum = sum + numbers[index];
   }
   return sum;
 }
 
-const reverseArrayElements = function(numbers){
+
+const reverse = function(elements){
   let result = [];
-  for(let index = numbers.length-1; index >= 0; index--){
-    result.push(numbers[index]);
+  for(let index = elements.length-1; index >= 0; index--){
+    result.push(elements[index]);
   }
   return result;
 }
 
-const selectEverySecondElement = function(numbers){
+const selectEverySecondElement = function(elements){
   let result = [];
-  for(let index = 0; index < numbers.length; index++){
-    if(isEven(index)){
-      result.push(numbers[index]);
+  for(let index = 0; index < elements.length; index+=2){
+      result.push(elements[index]);
     }
-  }
   return result;
 }
 
@@ -59,13 +57,14 @@ const generateFibonacci = function(length){
   }
   return result;
 }
+
  
 const generateReverseFibonacci = function(length){
   let fibonacci = generateFibonacci(length);
-  return reverseArrayElements(fibonacci);
+  return reverse(fibonacci);
 }
 
-const findGreatestArrayElement = function(numbers){
+const findGreatestNumber = function(numbers){
   let greatestNumber = numbers[0];
   for(let index = 1; index < numbers.length; index++){
     if(numbers[index] > greatestNumber){
@@ -75,7 +74,7 @@ const findGreatestArrayElement = function(numbers){
   return greatestNumber;
 }
 
-const findLowestArrayElement = function(numbers){
+const findLowestNumber = function(numbers){
   let lowestNumber = numbers[0];
   for(let index = 1; index < numbers.length; index++){
     if(numbers[index] < lowestNumber){
@@ -85,16 +84,16 @@ const findLowestArrayElement = function(numbers){
   return lowestNumber;
 }
 
-const calculateAverageOfArrayElements = function(numbers){
-  let sum = calculateSumOfArrayElements(numbers);
+const calculateAverage = function(numbers){
+  let sum = calculateSum(numbers);
   let numberOfElements = numbers.length;
   return sum/numberOfElements;
 }
 
-const mappingLengths = function(stringArray){
+const mapLengths = function(stringsArray){
   let result = [];
-  for(let index = 0; index < stringArray.length; index++){
-    result.push(stringArray[index].length);
+  for(let index = 0; index < stringsArray.length; index++){
+    result.push(stringsArray[index].length);
   }
   return result;
 }
@@ -109,13 +108,13 @@ const countEvenNumbers = function(numbers){
   return evenNumbers.length;
 }
 
-const countElementsGreaterThanGivenNumber = function(array, number){
-  let greaterNumbers = partitionArray(array,number)[1];
+const countNumbersGreaterThan = function(numbers, number){
+  let greaterNumbers = partition(numbers,number)[1];
   return greaterNumbers.length;
 }
 
-const countElementsLesserThanGivenNumber = function(array, number){
-  let lesserNumbers = partitionArray(array,number)[0];
+const countNumbersLesserThan = function(numbers, number){
+  let lesserNumbers = partition(numbers,number)[0];
   if(lesserNumbers.includes(number)){
     return lesserNumbers.length-1;
   }
@@ -124,12 +123,12 @@ const countElementsLesserThanGivenNumber = function(array, number){
 
 
 const findIndex = function(array, element){
-  let result = "could not find";
+  let result = -1;
   for(let index = 0; index < array.length; index++){
     if(array[index] == element){
       result = index;
     }
-    if(result != "could not find"){
+    if(result != -1){
       return result;
     }
   }
@@ -141,9 +140,9 @@ const extractDigits = function(number){
   while(number > 0){
     let digit = number % 10;
     number = Math.floor(number / 10);
-    digits.push(digit);
+    digits.unshift(digit);
   }
-  return reverseArrayElements(digits);
+  return digits;
 }
 
 const findUnique = function(elements){
@@ -193,7 +192,7 @@ const isSubset = function(superSet, subSet){
   return true;
 }
 
-const zipArrays = function(firstArray, secondArray){
+const zip = function(firstArray, secondArray){
   let result = [];
   for(let index = 0; index < secondArray.length; index++){
     result[index] = [firstArray[index],secondArray[index]];
@@ -201,7 +200,7 @@ const zipArrays = function(firstArray, secondArray){
   return result;
 }
 
-const partitionArray = function(array,number){
+const partition = function(array,number){
   let result = [];
   let segregatedNumbers = { greaterNumbers : [], lesserNumbers : [] };
   for(let index = 0; index < array.length; index++){
