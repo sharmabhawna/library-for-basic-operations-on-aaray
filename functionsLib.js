@@ -242,6 +242,17 @@ const descendingSort = function(numbers){
   return numbers;
 }
 
+const rotate = function(elements, element){
+  let result = [];
+  let index = findIndex(elements, element);
+  for(let i = index+1; i < elements.length; i++){
+    result.push(elements[i]);
+  }
+  for(let j = 0; j <= index; j++){
+    result.push(elements[j]);
+  }
+  return result;
+}
 
 exports.selectEvenNumbers = selectEvenNumbers;
 exports.selectOddNumbers = selectOddNumbers;
@@ -268,3 +279,4 @@ exports.zip = zip;
 exports.partition = partition;
 exports.ascendingSort = ascendingSort;
 exports.descendingSort = descendingSort;
+exports.rotate = rotate;

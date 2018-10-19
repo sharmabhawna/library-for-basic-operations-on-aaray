@@ -1,96 +1,116 @@
-const lib = require('./functionsLib.js');
 const assert = require('assert');
+const lib = require('./functionsLib.js');
 
+const { selectEvenNumbers,
+  selectOddNumbers,
+  calculateSum,
+  reverse,
+  selectEverySecondElement,
+  generateReverseFibonacci,
+  findGreatestNumber,
+  findLowestNumber,
+  calculateAverage,
+  mapLengths,
+  countOddNumbers,
+  countEvenNumbers,
+  countNumbersGreaterThan,
+  countNumbersLesserThan ,
+  findIndex,
+  extractDigits,
+  findUnique,
+  findUnion,
+  findIntersection,
+  isSubset,
+  zip,
+  findDifference,
+  partition, 
+  ascendingSort,
+  descendingSort,
+  rotate } = lib;
 
-let { selectEvenNumbers } = lib;
-let { selectOddNumbers } = lib;
-let { calculateSumOfArrayElements } = lib;
-let { reverseArrayElements } = lib;
-let { selectEverySecondElement } = lib;
-let { generateReverseFibonacci } = lib;
-let { findGreatestArrayElement } = lib;
-let { findLowestArrayElement } = lib;
-let { calculateAverageOfArrayElements } = lib;
-let { mappingLengths } = lib;
-let { countOddNumbers } = lib;
-let { countEvenNumbers } = lib;
-let { countElementsGreaterThanGivenNumber } = lib;
-let { countElementsLesserThanGivenNumber} = lib;
-let { findIndex } = lib;
-let { extractDigits } = lib;
-let { findUnique } = lib;
-let { findUnion } = lib;
-let { findIntersection } = lib;
-let { isSubset } = lib;
-let { zipArrays } = lib;
-let { findDifference } = lib;
-let { countElementsLesserThanGivenNumber} = lib;
-let { partitionArray } = lib;
+//Tests for selecting odd numbers :
+assert.deepEqual(selectOddNumbers([]), []);//empty array
+assert.deepEqual(selectOddNumbers([1]), [1]);//one odd element
+assert.deepEqual(selectOddNumbers([2]), []);//one even element
+assert.deepEqual(selectOddNumbers([1,2]), [1]);//one even and one odd element
+assert.deepEqual(selectOddNumbers([-1,-2,3,6,0,9]), [-1,3,9]);//multiple mislaneous elements including negatives
 
-assert.deepEqual(selectOddNumbers([]), []);
-assert.deepEqual(selectOddNumbers([1]), [1]);
-assert.deepEqual(selectOddNumbers([2]), []);
-assert.deepEqual(selectOddNumbers([1,2]), [1]);
-assert.deepEqual(selectEvenNumbers([]), []);
-assert.deepEqual(selectEvenNumbers([1]), []);
-assert.deepEqual(selectEvenNumbers([2]), [2]);
-assert.deepEqual(selectEvenNumbers([1,2]), [2]);
+//Tests for selecting even numbers :
+assert.deepEqual(selectEvenNumbers([]), []);//empty array
+assert.deepEqual(selectEvenNumbers([1]), []);//one odd element
+assert.deepEqual(selectEvenNumbers([2]), [2]);//one even element
+assert.deepEqual(selectEvenNumbers([1,2]), [2]);//one even and one odd element
+assert.deepEqual(selectEvenNumbers([-1,-2,3,6,0,9]), [-2,6,0]);//multiple mislaneous elements including negatives
 
-assert.equal(calculateSumOfArrayElements([1,2]), 3);
-assert.equal(calculateSumOfArrayElements([-2,2]), 0);
-assert.equal(calculateSumOfArrayElements(["a",1]), "a1");
-assert.equal(calculateSumOfArrayElements(["a","b"]), "ab");
+//Tests for calculating sum of all elements of array :
+assert.equal(calculateSum([1,2]), 3);//both positive numbers
+assert.equal(calculateSum([-2,2]), 0);//one positive and one negative number
+assert.equal(calculateSum([-2,-2]), -4);//both negative numbers
 
-assert.deepEqual(reverseArrayElements([1,2]), [2,1]);
-assert.deepEqual(reverseArrayElements(["a","b"]), ["b","a"]);
+//Tests for reversing elements of array :
+assert.deepEqual(reverse([1,2]), [2,1]);//integral array
+assert.deepEqual(reverse(["a","b"]), ["b","a"]);//string array
+assert.deepEqual(reverse(["a",3,"b"]), ["b",3,"a"]);//mislaneous array
 
-assert.deepEqual(selectEverySecondElement([1,2,3]), [1,3]);
-assert.deepEqual(selectEverySecondElement(["a","b","c"]), ["a","c"]);
+//Tests for selecting every second element of array :
+assert.deepEqual(selectEverySecondElement([1,2,3]), [1,3]);//integral array
+assert.deepEqual(selectEverySecondElement(["a","b","c"]), ["a","c"]);//strings array
+assert.deepEqual(selectEverySecondElement([1,"a","b",4,5]), [1,"b",5]);//mislaneous array
 
+//Tests for generating reverse fibonacci series :
 assert.deepEqual(generateReverseFibonacci(1), [0]);
 assert.deepEqual(generateReverseFibonacci(5), [3,2,1,1,0]);
 assert.deepEqual(generateReverseFibonacci(8), [13,8,5,3,2,1,1,0]);
 
-assert.equal(findGreatestArrayElement([1,2,10]), 10);
-assert.equal(findGreatestArrayElement([10,2,5]), 10);
+//Tests for finding greatest number of array :
+assert.equal(findGreatestNumber([1,2.5,10]), 10);//positive numbers
+assert.equal(findGreatestNumber([-1.5,-2,-10]), -1.5);//negative numbers
+assert.equal(findGreatestNumber([10,12.5,-5,-1.5,3.5]), 12.5);//mislaneous 
 
-assert.equal(findLowestArrayElement([1,2,10]), 1);
-assert.equal(findLowestArrayElement([10,2,5]), 2);
+//Tests for finding lowest number of array :
+assert.equal(findLowestNumber([1.5,2,10]), 1.5);//postive numbers
+assert.equal(findLowestNumber([-10,-2,-5.5]), -10);//negative numbers
+assert.equal(findLowestNumber([-10,2,-2,5,-5.5]), -10);//mislaneous
 
-assert.equal(calculateAverageOfArrayElements([1,2,3]), 2);
-assert.equal(calculateAverageOfArrayElements([60,60,60]), 60);
+//Tests for calculating average of all elements of array :
+assert.equal(calculateAverage([1,2,3]), 2);//positive numbers
+assert.equal(calculateAverage([-60,-60,-60]), -60);//negative numbers
+assert.equal(calculateAverage([-60,60,-60,60]), 0);//negative numbers
 
-assert.deepEqual(mappingLengths(["a","be"]), [1,2]);
-assert.deepEqual(mappingLengths(["","programming"]), [0,11]);
-assert.deepEqual(mappingLengths(["mary","had","a","little","lamb"]), [4,3,1,6,4]);
+//Tests for mapping lenghts of all elements of array : 
+assert.deepEqual(mapLengths(["a","be"]), [1,2]);
+assert.deepEqual(mapLengths(["","programming"]), [0,11]);
+assert.deepEqual(mapLengths(["mary","had","a","little","lamb"]), [4,3,1,6,4]);
 
-assert.equal(countOddNumbers([]), 0);
-assert.equal(countOddNumbers([1]), 1);
-assert.equal(countOddNumbers([2]), 0);
-assert.equal(countOddNumbers([1,2]), 1);
+//Tests for counting odd numbers present in array : 
+assert.equal(countOddNumbers([]), 0);//empty array
+assert.equal(countOddNumbers([1]), 1);//one odd element
+assert.equal(countOddNumbers([2]), 0);//one even element
+assert.equal(countOddNumbers([1,2]), 1);//one odd and one even element
+assert.equal(countOddNumbers([-3,-2,0,-10,-7,1,2]), 3);//one odd and one even element
 
+assert.equal(countEvenNumbers([]), 0);//empty array
+assert.equal(countEvenNumbers([1]), 0);//one odd element
+assert.equal(countEvenNumbers([2]), 1);//one even element
+assert.equal(countEvenNumbers([1,2]), 1);//one odd and one even element
+assert.equal(countEvenNumbers([-3,-2,0,-10,-7,1,2]), 4);//multiple mislaneous elements including negatives 
 
-assert.equal(countEvenNumbers([]), 0);
-assert.equal(countEvenNumbers([1]), 0);
-assert.equal(countEvenNumbers([2]), 1);
-assert.equal(countEvenNumbers([1,2]), 1);
+assert.equal(countNumbersGreaterThan([3,4,5,6,1],4), 2);
+assert.equal(countNumbersGreaterThan([33,44,5,6,1],0), 5);
+assert.equal(countNumbersGreaterThan([],0), 0);
+assert.equal(countNumbersGreaterThan([],8), 0);
 
-assert.equal(countElementsGreaterThanGivenNumber([3,4,5,6,1],4), 2);
-assert.equal(countElementsGreaterThanGivenNumber([33,44,5,6,1],0), 5);
-assert.equal(countElementsGreaterThanGivenNumber([],0), 0);
-assert.equal(countElementsGreaterThanGivenNumber([],8), 0);
+assert.equal(countNumbersLesserThan([3,4,5,6,1],4), 2);
+assert.equal(countNumbersLesserThan([33,44,5,6,1],0), 0);
+assert.equal(countNumbersLesserThan([],0), 0);
+assert.equal(countNumbersLesserThan([1,2,3,10,11],8), 3);
 
-assert.equal(countElementsLesserThanGivenNumber([3,4,5,6,1],4), 2);
-assert.equal(countElementsLesserThanGivenNumber([33,44,5,6,1],0), 0);
-assert.equal(countElementsLesserThanGivenNumber([],0), 0);
-assert.equal(countElementsLesserThanGivenNumber([1,2,3,10,11],8), 3);
-
-assert.equal(findIndex([3,4,5,6,1],0), "could not find");
+assert.equal(findIndex([3,4,5,6,1],0), -1);
 assert.equal(findIndex([3,4,5,6,1],4), 1);
-assert.equal(findIndex([],0), "could not find");
-assert.equal(findIndex([],"a"), "could not find");
+assert.equal(findIndex([],0), -1);
+assert.equal(findIndex([],"a"), -1);
 assert.equal(findIndex(["a","b","c","d"],"c"), 2);
-assert.equal(findIndex(["a","b","c","d"],"z"), "could not find");
+assert.equal(findIndex(["a","b","c","d"],"z"), -1);
 
 assert.deepEqual(extractDigits(12345), [1,2,3,4,5]);
 assert.deepEqual(extractDigits(), []);
@@ -169,3 +189,6 @@ assert.deepEqual(ascendingSort([-9,5,0,-3,1]), [-9,-3,0,1,5]);
 assert.deepEqual(descendingSort([3,1,5,2]), [5,3,2,1]);
 assert.deepEqual(descendingSort([9,5,0,3,1]), [9,5,3,1,0]);
 assert.deepEqual(descendingSort([-9,5,0,-3,1]), [5,1,0,-3,-9]);
+
+assert.deepEqual(rotate([1,2,3,4], 2), [3,4,1,2]);
+assert.deepEqual(rotate(["a","b","c","d","e"],"b"), ["c","d","e","a","b"]);
