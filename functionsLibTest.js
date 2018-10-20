@@ -90,6 +90,7 @@ assert.equal(computeAverage([-60,-60,-60]), -60);//negative numbers
 assert.equal(computeAverage([-60,60,-60,60]), 0);//negative numbers
 
 //Tests for mapping lenghts of all elements of array : 
+assert.deepEqual(mapLengths([]), []);
 assert.deepEqual(mapLengths(["a","be"]), [1,2]);
 assert.deepEqual(mapLengths(["","programming"]), [0,11]);
 assert.deepEqual(mapLengths(["mary","had","a","little","lamb"]), [4,3,1,6,4]);
