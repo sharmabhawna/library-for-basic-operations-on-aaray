@@ -54,6 +54,7 @@ assert.equal(computeSum([-2,-2]), -4);//both negative numbers
 //Tests for reversing elements of array :
 assert.deepEqual(reverse([]), []);//empty array
 assert.deepEqual(reverse([1]), [1]);//one element array
+assert.deepEqual(reverse([1,1]), [1,1]);//two identical elements array
 assert.deepEqual(reverse([1,2]), [2,1]);//integral array
 assert.deepEqual(reverse(["a","b"]), ["b","a"]);//string array
 assert.deepEqual(reverse(["a",3,"b"]), ["b",3,"a"]);//mislaneous array
