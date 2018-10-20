@@ -24,8 +24,8 @@ const { extractEvenNumbers,
   zip,
   findDifference,
   partition, 
-  ascendingSort,
-  descendingSort,
+  isAscending,
+  isDescending,
   rotate } = lib;
 
 
@@ -184,16 +184,16 @@ assert.deepEqual(zip(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);
 assert.deepEqual(partition([1,2,3,4,5],3), [[1,2,3],[4,5]]);
 assert.deepEqual(partition([11,29,3,40,5,9],10), [[3,5,9],[11,29,40]]);
 
-assert.deepEqual(ascendingSort([3,1,5,2]), [1,2,3,5]);
-assert.deepEqual(ascendingSort([9,5,0,3,1]), [0,1,3,5,9]);
-assert.deepEqual(ascendingSort([-9,5,0,-3,1]), [-9,-3,0,1,5]);
 
-assert.deepEqual(descendingSort([3,1,5,2]), [5,3,2,1]);
-assert.deepEqual(descendingSort([9,5,0,3,1]), [9,5,3,1,0]);
-assert.deepEqual(descendingSort([-9,5,0,-3,1]), [5,1,0,-3,-9]);
+assert.equal(isAscending([1,2,3]), true);
+assert.equal(isAscending([3,2,1]), false);
 
-assert.deepEqual(rotate([1,2,3,4], 2), [3,4,1,2]);
-assert.deepEqual(rotate(["a","b","c","d","e"],"b"), ["c","d","e","a","b"]);
+
+assert.equal(isDescending([1,2,3]), false);
+assert.equal(isDescending([3,2,1]), true);
+
+assert.deepEqual(rotate([1,2,3,4], 2), [4,1,2,3]);
+assert.deepEqual(rotate(["a","b","c","d","e"],1), ["c","d","e","a","b"]);
 
 const testLib = require('./testLibrary.js');
 
@@ -207,6 +207,7 @@ testSelectOdds([1], [1]);
 testSelectOdds([2], []);
 testSelectOdds([1,2,3,4,5], [1,3,5]);
 testSelectOdds([-1,-2,3,6,0,9], [-1,3,9]);
+console.log("---------------------");
 testSelectEvens([], []);
 testSelectEvens([1], []);
 testSelectEvens([2], [2]);

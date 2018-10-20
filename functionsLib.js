@@ -59,7 +59,6 @@ const generateFibonacci = function(length){
   }
   return result;
 }
-
  
 const generateReverseFibonacci = function(length){
   let fibonacci = generateFibonacci(length);
@@ -203,50 +202,37 @@ const zip = function(firstArray, secondArray){
 }
 
 const partition = function(array,number){
-  let result = [];
-  let segregatedNumbers = { greaterNumbers : [], lesserNumbers : [] };
+  let result = [[],[]];
   for(let index = 0; index < array.length; index++){
-    let key = "greaterNumbers";
+    let requiredIndex = 1;
     if(array[index] <= number){
-      key = "lesserNumbers";
+      requiredIndex = 0;
     }
-    segregatedNumbers[key].push(array[index]);
+    result[requiredIndex].push(array[index]);
   }
-  result.push(segregatedNumbers["lesserNumbers"]);
-  result.push(segregatedNumbers["greaterNumbers"]);
   return result;
 }
 
-const ascendingSort = function(numbers){
-  let result = [];
-  for(let i = 0; i < numbers.length; i++){
-    for(let j = 0; j < numbers.length-i; j++){
-      if(numbers[j] > numbers[j+1]){
-        let temp = numbers[j];
-        numbers[j] = numbers[j+1];
-        numbers[j+1] = temp;
-      }
+const isAscending = function(array){
+  for(let index = 0; index < array.length; index++){
+    if(array[index] > array[index+1]){
+      return false;
     }
   }
-  return numbers;
+  return true;
 }
-
-const descendingSort = function(numbers){
-  for(let i = 0; i < numbers.length; i++){
-    for(let j = 0; j < numbers.length-i; j++){
-      if(numbers[j] < numbers[j+1]){
-        let temp = numbers[j];
-        numbers[j] = numbers[j+1];
-        numbers[j+1] = temp;
-      }
+  
+const isDescending = function(array){
+  for(let index = 0; index < array.length; index++){
+    if(array[index] < array[index+1]){
+      return false;
     }
   }
-  return numbers;
+  return true;
 }
 
-const rotate = function(elements, element){
+const rotate = function(elements, index){
   let result = [];
-  let index = findIndex(elements, element);
   for(let i = index+1; i < elements.length; i++){
     result.push(elements[i]);
   }
@@ -279,6 +265,6 @@ exports.findDifference = findDifference;
 exports.isSubset = isSubset;
 exports.zip = zip;
 exports.partition = partition;
-exports.ascendingSort = ascendingSort;
-exports.descendingSort = descendingSort;
+exports.isAscending = isAscending;
+exports.isDescending = isDescending;
 exports.rotate = rotate;
