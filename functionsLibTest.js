@@ -110,7 +110,8 @@ assert.equal(countEvenNumbers([]), 0);//empty array
 assert.equal(countEvenNumbers([1]), 0);//one odd element
 assert.equal(countEvenNumbers([2]), 1);//one even element
 assert.equal(countEvenNumbers([1,2]), 1);//one odd and one even element
-assert.equal(countEvenNumbers([-3,-2,0,-10,-7,1,2]), 4);//multiple mislaneous elements including negatives 
+assert.equal(countEvenNumbers([-1,-2]), 1);//one odd and one even negative number
+assert.equal(countEvenNumbers([-3,-2,0,-10,-7,1,2]), 4);//multiple mislaneous numbers 
 
 assert.equal(countNumbersGreaterThan([3,4,5,6,1],4), 2);
 assert.equal(countNumbersGreaterThan([33,44,5,6,1],0), 5);
