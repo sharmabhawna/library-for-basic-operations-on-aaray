@@ -87,6 +87,9 @@ const extractSmallestNumber = function(numbers){
 
 const computeAverage = function(numbers){
   let sum = computeSum(numbers);
+  if(sum == 0){
+    return 0;
+  }
   let numberOfElements = numbers.length;
   return sum/numberOfElements;
 }
