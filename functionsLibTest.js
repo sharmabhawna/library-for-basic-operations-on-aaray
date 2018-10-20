@@ -120,10 +120,11 @@ assert.equal(countNumbersGreaterThan([],8), 0);//empty array and non-zero thresh
 assert.equal(countNumbersGreaterThan([3,4,5,6,1],4), 2);//non-empty array and threshold is an element of array
 assert.equal(countNumbersGreaterThan([33,44,5,6,1],0), 5);//non-empty array and threshold is not an element of array
 
-assert.equal(countNumbersLesserThan([3,4,5,6,1],4), 2);
-assert.equal(countNumbersLesserThan([33,44,5,6,1],0), 0);
-assert.equal(countNumbersLesserThan([],0), 0);
-assert.equal(countNumbersLesserThan([1,2,3,10,11],8), 3);
+//Tests for counting numbers lesser than a threshold :
+assert.equal(countNumbersLesserThan([],0), 0);//empty array and zero as threshold 
+assert.equal(countNumbersLesserThan([],8), 3);//empty array and non-zero threshold 
+assert.equal(countNumbersLesserThan([3,4,5,6,1],4), 2);//non-empty array and threshold is an element of array
+assert.equal(countNumbersLesserThan([33,44,5,6,1],0), 0);//non-empty array and threshold is not an element of array
 
 assert.equal(findIndex([3,4,5,6,1],0), -1);
 assert.equal(findIndex([3,4,5,6,1,4],4), 1);
