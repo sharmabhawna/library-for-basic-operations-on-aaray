@@ -64,6 +64,7 @@ assert.deepEqual(selectEverySecondElement(["a","b","c"]), ["a","c"]);//strings a
 assert.deepEqual(selectEverySecondElement([1,"a","b",4,5]), [1,"b",5]);//mislaneous array
 
 //Tests for generating reverse fibonacci series :
+assert.deepEqual(generateReverseFibonacci(0), []);
 assert.deepEqual(generateReverseFibonacci(1), [0]);
 assert.deepEqual(generateReverseFibonacci(5), [3,2,1,1,0]);
 assert.deepEqual(generateReverseFibonacci(8), [13,8,5,3,2,1,1,0]);
