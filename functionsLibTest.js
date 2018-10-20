@@ -103,7 +103,8 @@ assert.equal(countOddNumbers([]), 0);//empty array
 assert.equal(countOddNumbers([1]), 1);//one odd element
 assert.equal(countOddNumbers([2]), 0);//one even element
 assert.equal(countOddNumbers([1,2]), 1);//one odd and one even element
-assert.equal(countOddNumbers([-3,-2,0,-10,-7,1,2]), 3);//one odd and one even element
+assert.equal(countOddNumbers([-1,-2]), 1);//one odd and one even negative number 
+assert.equal(countOddNumbers([-3,-2,0,-10,-7,1,2]), 3);//multiple mislaneous numbers
 
 assert.equal(countEvenNumbers([]), 0);//empty array
 assert.equal(countEvenNumbers([1]), 0);//one odd element
