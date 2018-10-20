@@ -1,10 +1,12 @@
 const segregateEvenOdd = function(numbers){
   let segregatedNumbers = { evenNumbers : [], oddNumbers : [] }
   let selectKey = { true : "evenNumbers", false : "oddNumbers" };
+  
   for(let index = 0; index < numbers.length; index++){
     let key = selectKey[isEven(numbers[index])];
     segregatedNumbers[key].push(numbers[index]);
   }
+  
   return segregatedNumbers;
 }
 
@@ -12,15 +14,15 @@ const isEven = function(number){
   return (number % 2 == 0);
 }
 
-const selectEvenNumbers = function(numbers){
+const extractEvenNumbers = function(numbers){
   return segregateEvenOdd(numbers)["evenNumbers"];
 }
 
-const selectOddNumbers = function(numbers){
+const extractOddNumbers = function(numbers){
   return segregateEvenOdd(numbers)["oddNumbers"];
 }
 
-const calculateSum = function(numbers){
+const computeSum = function(numbers){
   let sum = 0;
   for(let index = 0; index < numbers.length; index++){
     sum = sum + numbers[index];
@@ -64,7 +66,7 @@ const generateReverseFibonacci = function(length){
   return reverse(fibonacci);
 }
 
-const findGreatestNumber = function(numbers){
+const extractGreatestNumber = function(numbers){
   let greatestNumber = numbers[0];
   for(let index = 1; index < numbers.length; index++){
     if(numbers[index] > greatestNumber){
@@ -74,7 +76,7 @@ const findGreatestNumber = function(numbers){
   return greatestNumber;
 }
 
-const findLowestNumber = function(numbers){
+const extractSmallestNumber = function(numbers){
   let lowestNumber = numbers[0];
   for(let index = 1; index < numbers.length; index++){
     if(numbers[index] < lowestNumber){
@@ -84,8 +86,8 @@ const findLowestNumber = function(numbers){
   return lowestNumber;
 }
 
-const calculateAverage = function(numbers){
-  let sum = calculateSum(numbers);
+const computeAverage = function(numbers){
+  let sum = computeSum(numbers);
   let numberOfElements = numbers.length;
   return sum/numberOfElements;
 }
@@ -99,22 +101,22 @@ const mapLengths = function(stringsArray){
 }
 
 const countOddNumbers = function(numbers){
-  oddNumbers = selectOddNumbers(numbers);
+  oddNumbers = extractOddNumbers(numbers);
   return oddNumbers.length;
 }
 
 const countEvenNumbers = function(numbers){
-  evenNumbers = selectEvenNumbers(numbers);
+  evenNumbers = extractEvenNumbers(numbers);
   return evenNumbers.length;
 }
 
-const countNumbersGreaterThan = function(numbers, number){
-  let greaterNumbers = partition(numbers,number)[1];
+const countNumbersGreaterThan = function(array, number){
+  let greaterNumbers = partition(array,number)[1];
   return greaterNumbers.length;
 }
 
-const countNumbersLesserThan = function(numbers, number){
-  let lesserNumbers = partition(numbers,number)[0];
+const countNumbersLesserThan = function(array, number){
+  let lesserNumbers = partition(array,number)[0];
   if(lesserNumbers.includes(number)){
     return lesserNumbers.length-1;
   }
@@ -216,6 +218,7 @@ const partition = function(array,number){
 }
 
 const ascendingSort = function(numbers){
+  let result = [];
   for(let i = 0; i < numbers.length; i++){
     for(let j = 0; j < numbers.length-i; j++){
       if(numbers[j] > numbers[j+1]){
@@ -253,15 +256,15 @@ const rotate = function(elements, element){
   return result;
 }
 
-exports.selectEvenNumbers = selectEvenNumbers;
-exports.selectOddNumbers = selectOddNumbers;
-exports.calculateSum = calculateSum;
+exports.extractEvenNumbers = extractEvenNumbers;
+exports.extractOddNumbers = extractOddNumbers;
+exports.computeSum = computeSum;
 exports.reverse = reverse;
 exports.selectEverySecondElement = selectEverySecondElement;
 exports.generateReverseFibonacci = generateReverseFibonacci;
-exports.findGreatestNumber = findGreatestNumber;
-exports.findLowestNumber = findLowestNumber;
-exports.calculateAverage = calculateAverage;
+exports.extractGreatestNumber = extractGreatestNumber;
+exports.extractSmallestNumber = extractSmallestNumber;
+exports.computeAverage = computeAverage;
 exports.mapLengths = mapLengths;
 exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;
