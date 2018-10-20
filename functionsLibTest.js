@@ -34,7 +34,8 @@ assert.deepEqual(extractOddNumbers([]), []);//empty array
 assert.deepEqual(extractOddNumbers([1]), [1]);//one odd element
 assert.deepEqual(extractOddNumbers([2]), []);//one even element
 assert.deepEqual(extractOddNumbers([1,2]), [1]);//one even and one odd element
-assert.deepEqual(extractOddNumbers([-1,-2,3,6,0,9]), [-1,3,9]);//multiple mislaneous elements including negatives
+assert.deepEqual(extractOddNumbers([-1,-2]), [-1]);//one even and one odd negative number
+assert.deepEqual(extractOddNumbers([-1,-2,3,6,0,9]), [-1,3,9]);//multiple mislaneous numbers
 
 //Tests for selecting even numbers :
 assert.deepEqual(extractEvenNumbers([]), []);//empty array
@@ -192,24 +193,8 @@ assert.equal(isAscending([3,2,1]), false);
 assert.equal(isDescending([1,2,3]), false);
 assert.equal(isDescending([3,2,1]), true);
 
+
 assert.deepEqual(rotate([1,2,3,4], 2), [4,1,2,3]);
 assert.deepEqual(rotate(["a","b","c","d","e"],1), ["c","d","e","a","b"]);
 
-const testLib = require('./testLibrary.js');
 
-const { printHeading } = testLib;
-const { testSelectOdds } = testLib;
-const { testSelectEvens } = testLib;
-
-printHeading();
-testSelectOdds([], []);
-testSelectOdds([1], [1]);
-testSelectOdds([2], []);
-testSelectOdds([1,2,3,4,5], [1,3,5]);
-testSelectOdds([-1,-2,3,6,0,9], [-1,3,9]);
-console.log("---------------------");
-testSelectEvens([], []);
-testSelectEvens([1], []);
-testSelectEvens([2], [2]);
-testSelectEvens([1,2,3,4,5], [2,4]);
-testSelectEvens([-1,-2,3,6,0,9], [-2,6,0]);
