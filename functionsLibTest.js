@@ -106,6 +106,7 @@ assert.equal(countOddNumbers([1,2]), 1);//one odd and one even element
 assert.equal(countOddNumbers([-1,-2]), 1);//one odd and one even negative number 
 assert.equal(countOddNumbers([-3,-2,0,-10,-7,1,2]), 3);//multiple mislaneous numbers
 
+//Tests for counting even numbers present in array : 
 assert.equal(countEvenNumbers([]), 0);//empty array
 assert.equal(countEvenNumbers([1]), 0);//one odd element
 assert.equal(countEvenNumbers([2]), 1);//one even element
@@ -113,10 +114,11 @@ assert.equal(countEvenNumbers([1,2]), 1);//one odd and one even element
 assert.equal(countEvenNumbers([-1,-2]), 1);//one odd and one even negative number
 assert.equal(countEvenNumbers([-3,-2,0,-10,-7,1,2]), 4);//multiple mislaneous numbers 
 
-assert.equal(countNumbersGreaterThan([3,4,5,6,1],4), 2);
-assert.equal(countNumbersGreaterThan([33,44,5,6,1],0), 5);
-assert.equal(countNumbersGreaterThan([],0), 0);
-assert.equal(countNumbersGreaterThan([],8), 0);
+//Tests for counting numbers greater than a threshold :
+assert.equal(countNumbersGreaterThan([],0), 0);//empty array and zero as threshold 
+assert.equal(countNumbersGreaterThan([],8), 0);//empty array and non-zero threshold 
+assert.equal(countNumbersGreaterThan([3,4,5,6,1],4), 2);//non-empty array and threshold is an element of array
+assert.equal(countNumbersGreaterThan([33,44,5,6,1],0), 5);//non-empty array and threshold is not an element of array
 
 assert.equal(countNumbersLesserThan([3,4,5,6,1],4), 2);
 assert.equal(countNumbersLesserThan([33,44,5,6,1],0), 0);
