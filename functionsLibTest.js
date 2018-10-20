@@ -52,12 +52,13 @@ assert.equal(computeSum([-2,2]), 0);//one positive and one negative number
 assert.equal(computeSum([-2,-2]), -4);//both negative numbers
 
 //Tests for reversing elements of array :
-assert.deepEqual(reverse([]), []);//integral array
+assert.deepEqual(reverse([]), []);//empty array
 assert.deepEqual(reverse([1,2]), [2,1]);//integral array
 assert.deepEqual(reverse(["a","b"]), ["b","a"]);//string array
 assert.deepEqual(reverse(["a",3,"b"]), ["b",3,"a"]);//mislaneous array
 
 //Tests for selecting every second element of array :
+assert.deepEqual(selectEverySecondElement([]), []);//empty array
 assert.deepEqual(selectEverySecondElement([1,2,3]), [1,3]);//integral array
 assert.deepEqual(selectEverySecondElement(["a","b","c"]), ["a","c"]);//strings array
 assert.deepEqual(selectEverySecondElement([1,"a","b",4,5]), [1,"b",5]);//mislaneous array
