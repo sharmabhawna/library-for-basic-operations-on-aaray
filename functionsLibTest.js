@@ -159,24 +159,26 @@ assert.deepEqual(findUnique(["a","b","a"]), ["a","b"]);//one distinct and two id
 assert.deepEqual(findUnique(["a","b","c"]), ["a","b","c"]);//three distinct elements
 assert.deepEqual(findUnique(["a","b","a","b"]), ["a","b"]);//two pairs of identical elements
 
-assert.deepEqual(findUnion([],[]), []);
-assert.deepEqual(findUnion([1],[]), [1]);
-assert.deepEqual(findUnion([],[1]), [1]);
-assert.deepEqual(findUnion([1],[1]), [1]);
-assert.deepEqual(findUnion([1,2],[2]), [1,2]);
-assert.deepEqual(findUnion([1,2],[1,2]), [1,2]);
-assert.deepEqual(findUnion([2],[1,2]), [2,1]);
-assert.deepEqual(findUnion([1,2],[3,4]), [1,2,3,4]);
-assert.deepEqual(findUnion([""],[]), [""]);
-assert.deepEqual(findUnion([],[""]), [""]);
-assert.deepEqual(findUnion([""],[""]), [""]);
-assert.deepEqual(findUnion(["a"],[]), ["a"]);
-assert.deepEqual(findUnion([],["a"]), ["a"]);
-assert.deepEqual(findUnion(["a"],["a"]), ["a"]);
-assert.deepEqual(findUnion(["a","b"],["b"]), ["a","b"]);
-assert.deepEqual(findUnion(["a","b"],["a","b"]), ["a","b"]);
-assert.deepEqual(findUnion(["b"],["a","b"]), ["b","a"]);
-assert.deepEqual(findUnion(["a","b"],["c","d"]), ["a","b","c","d"]);
+//Tests for finding union of two sets : 
+assert.deepEqual(findUnion([],[]), []);//both arrays empty
+assert.deepEqual(findUnion([1],[]), [1]);//second array empty
+assert.deepEqual(findUnion([],[1]), [1]);//first array empty
+assert.deepEqual(findUnion([1],[1]), [1]);//both arrays with one element(identical)
+assert.deepEqual(findUnion([2],[1,2]), [2,1]);//first array with one element of second array
+assert.deepEqual(findUnion([1,2],[2]), [1,2]);//second array with one element of first array
+assert.deepEqual(findUnion([1,2],[1,2]), [1,2]);//both identical arrays with two elements
+assert.deepEqual(findUnion([1,2],[3,4]), [1,2,3,4]);//both distinct arrays with two elements
+
+assert.deepEqual(findUnion([""],[]), [""]);//first array with empty string and second array empty
+assert.deepEqual(findUnion([],[""]), [""]);//second array with empty string and first array empty
+assert.deepEqual(findUnion([""],[""]), [""]);//both arrays with empty string
+assert.deepEqual(findUnion(["a"],[]), ["a"]);//first array with non-empty string and second array empty
+assert.deepEqual(findUnion([],["a"]), ["a"]);//second array with non-empty string and first array empty
+assert.deepEqual(findUnion(["a"],["a"]), ["a"]);//both arrays with non-empty string
+assert.deepEqual(findUnion(["b"],["a","b"]), ["b","a"]);//first array with one element of second array(string type)
+assert.deepEqual(findUnion(["a","b"],["b"]), ["a","b"]);//second array with one element of first array(string type)
+assert.deepEqual(findUnion(["a","b"],["a","b"]), ["a","b"]);//both identical arrays with two elements(string type)
+assert.deepEqual(findUnion(["a","b"],["c","d"]), ["a","b","c","d"]);//both distinct arrays with two elements(string type)
 
 assert.deepEqual(findIntersection([],[]), []);
 assert.deepEqual(findIntersection([1],[]), []);
