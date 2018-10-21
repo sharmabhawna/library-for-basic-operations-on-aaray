@@ -38,13 +38,13 @@ assert.deepEqual(extractOddNumbers([-1,-2]), [-1]);//one even and one odd negati
 assert.deepEqual(extractOddNumbers([-1,-2,3,6,0,9]), [-1,3,9]);//multiple mislaneous numbers
 
 ////Tests for selecting even numbers :
-//assert.deepEqual(extractEvenNumbers([]), []);//empty array
-//assert.deepEqual(extractEvenNumbers([1]), []);//one odd element
-//assert.deepEqual(extractEvenNumbers([2]), [2]);//one even element
-//assert.deepEqual(extractEvenNumbers([1,2]), [2]);//one even and one odd element
-//assert.deepEqual(extractEvenNumbers([-1,-2]), [-2]);//one even and one odd negative number
-//assert.deepEqual(extractEvenNumbers([-1,-2,3,6,0,9]), [-2,6,0]);//multiple mislaneous numbers 
-//
+assert.deepEqual(extractEvenNumbers([]), []);//empty array
+assert.deepEqual(extractEvenNumbers([1]), []);//one odd element
+assert.deepEqual(extractEvenNumbers([2]), [2]);//one even element
+assert.deepEqual(extractEvenNumbers([1,2]), [2]);//one even and one odd element
+assert.deepEqual(extractEvenNumbers([-1,-2]), [-2]);//one even and one odd negative number
+assert.deepEqual(extractEvenNumbers([-1,-2,3,6,0,9]), [-2,6,0]);//multiple mislaneous numbers 
+
 ////Tests for calculating sum of all elements of array :
 //assert.equal(computeSum([]), 0);//empty array 
 //assert.equal(computeSum([1,2]), 3);//both positive numbers
