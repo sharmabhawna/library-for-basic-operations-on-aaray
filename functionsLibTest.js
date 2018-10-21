@@ -260,9 +260,12 @@ assert.equal(isAscending([2,1,3]), false);
 assert.equal(isAscending([1,2,3]), true);
 assert.equal(isAscending([3,2,1]), false);
 
-
-assert.equal(isDescending([1,2,3]), false);
+//Tests for checking whether an array is in descending order :
+assert.equal(isDescending([]), true);
+assert.equal(isDescending([1,1,1]), true);
+assert.equal(isDescending([3,1,2]), false);
 assert.equal(isDescending([3,2,1]), true);
+assert.equal(isDescending([1,2,3]), false);
 
 
 assert.deepEqual(rotate([1,2,3,4], 2), [4,1,2,3]);
