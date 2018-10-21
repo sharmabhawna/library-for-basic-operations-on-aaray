@@ -180,25 +180,30 @@ assert.deepEqual(findUnion(["a","b"],["b"]), ["a","b"]);//second array with one 
 assert.deepEqual(findUnion(["a","b"],["a","b"]), ["a","b"]);//both identical arrays with two elements(string type)
 assert.deepEqual(findUnion(["a","b"],["c","d"]), ["a","b","c","d"]);//both distinct arrays with two elements(string type)
 
-assert.deepEqual(findIntersection([],[]), []);
-assert.deepEqual(findIntersection([1],[]), []);
-assert.deepEqual(findIntersection([],[1]), []);
-assert.deepEqual(findIntersection([1],[1]), [1]);
-assert.deepEqual(findIntersection([1,2],[2]), [2]);
-assert.deepEqual(findIntersection([1,2],[1,2]), [1,2]);
-assert.deepEqual(findIntersection([2],[1,2]), [2]);
-assert.deepEqual(findIntersection([1,2],[3,4]), []);
-assert.deepEqual(findIntersection([""],[]), []);
-assert.deepEqual(findIntersection([],[""]), []);
-assert.deepEqual(findIntersection([""],[""]), [""]);
-assert.deepEqual(findIntersection(["a"],[]), []);
-assert.deepEqual(findIntersection([],["a"]), []);
-assert.deepEqual(findIntersection(["a"],["a"]), ["a"]);
-assert.deepEqual(findIntersection(["a","b"],["b"]), ["b"]);
-assert.deepEqual(findIntersection(["a","b"],["a","b"]), ["a","b"]);
-assert.deepEqual(findIntersection(["b"],["a","b"]), ["b"]);
+//Tests for finding intersection of two arrays : 
+assert.deepEqual(findIntersection([],[]), []);//both arrays empty
+assert.deepEqual(findIntersection([1],[]), []);//second array empty
+assert.deepEqual(findIntersection([],[1]), []);//first array empty
+assert.deepEqual(findIntersection([1],[1]), [1]);//both arrays with one element(identical)
+assert.deepEqual(findIntersection([2],[1,2]), [2]);//first array with one element of second array
+assert.deepEqual(findIntersection([1,2],[2]), [2]);//second array with one element of first array
+assert.deepEqual(findIntersection([1,2],[1,2]), [1,2]);//both identical arrays with two elements
+assert.deepEqual(findIntersection([1,2],[3,4]), []);//both distinct arrays with two elements
 assert.deepEqual(findIntersection([1,2,2,3],[1,3]),[1,3]);
-assert.deepEqual(findIntersection([1,2,2,3],[1,2,3,3]),[1,2,3]);
+assert.deepEqual(findIntersection([1,2,2,3],[1,2]),[1,2]);
+
+assert.deepEqual(findIntersection([""],[]), []);//first array with empty string and second array empty
+assert.deepEqual(findIntersection([],[""]), []);//second array with empty string and first array empty
+assert.deepEqual(findIntersection([""],[""]), [""]);//both arrays with empty string
+assert.deepEqual(findIntersection(["a"],[]), []);//first array with non-empty string and second array empty
+assert.deepEqual(findIntersection([],["a"]), []);//second array with non-empty string and first array empty
+assert.deepEqual(findIntersection(["a"],["a"]), ["a"]);//both arrays with non-empty string
+assert.deepEqual(findIntersection(["b"],["a","b"]), ["b"]);//first array with one element of second array(string type)
+assert.deepEqual(findIntersection(["a","b"],["b"]), ["b"]);//second array with one element of first array(string type)
+assert.deepEqual(findIntersection(["a","b"],["a","b"]), ["a","b"]);//both identical arrays with two elements(string type)
+assert.deepEqual(findIntersection(["a","b"],["c","d"]), []);//both distinct arrays with two elements(string type)
+
+
 
 assert.deepEqual(findDifference([1,2,3,3],[1,2]), [3]);
 assert.deepEqual(findDifference([1,2,3,3],[3,4]), [1,2]);
