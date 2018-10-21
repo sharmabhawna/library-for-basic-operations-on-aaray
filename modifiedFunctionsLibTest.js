@@ -46,11 +46,11 @@ assert.deepEqual(extractEvenNumbers([-1,-2]), [-2]);//one even and one odd negat
 assert.deepEqual(extractEvenNumbers([-1,-2,3,6,0,9]), [-2,6,0]);//multiple mislaneous numbers 
 
 ////Tests for calculating sum of all elements of array :
-//assert.equal(computeSum([]), 0);//empty array 
-//assert.equal(computeSum([1,2]), 3);//both positive numbers
-//assert.equal(computeSum([-2,2]), 0);//one positive and one negative number
-//assert.equal(computeSum([-2,-2]), -4);//both negative numbers
-//
+assert.equal(computeSum([]), 0);//empty array 
+assert.equal(computeSum([1,2]), 3);//both positive numbers
+assert.equal(computeSum([-2,2]), 0);//one positive and one negative number
+assert.equal(computeSum([-2,-2]), -4);//both negative numbers
+
 ////Tests for reversing elements of array :
 //assert.deepEqual(reverse([]), []);//empty array
 //assert.deepEqual(reverse([1]), [1]);//one element array
