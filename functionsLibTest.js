@@ -253,6 +253,10 @@ assert.deepEqual(partition([1,2,3,4,5],0), [[], [1,2,3,4,5]]);//left partition e
 assert.deepEqual(partition([1,2,3,4,5],3), [[1,2,3],[4,5]]);//no partition empty
 assert.deepEqual(partition([11,29,3,40,5,9],10), [[3,5,9],[11,29,40]]);
 
+//Tests for checking whether an array is in ascending order :
+assert.equal(isAscending([]), true);
+assert.equal(isAscending([1,1,1]), true);
+assert.equal(isAscending([2,1,3]), false);
 assert.equal(isAscending([1,2,3]), true);
 assert.equal(isAscending([3,2,1]), false);
 
