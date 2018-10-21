@@ -134,8 +134,11 @@ assert.equal(findIndex(["a","b","c","d"],"z"), -1);//element(string) is not pres
 assert.equal(findIndex([3,4,5,6,1,4],4), 1);//element(integral) is present in array
 assert.equal(findIndex(["a","b","c","d"],"c"), 2);//element(string) is present in array
 
-assert.deepEqual(extractDigits(12345), [1,2,3,4,5]);
-assert.deepEqual(extractDigits(), []);
+//Tests for extracting digits of a numbers into an array :
+assert.deepEqual(extractDigits(), []);//number is not given
+assert.deepEqual(extractDigits(1), [1]);//one digit number 
+assert.deepEqual(extractDigits(12), [1,2]);//two digits number 
+assert.deepEqual(extractDigits(12345), [1,2,3,4,5]);//mutiple digits number
 
 assert.deepEqual(findUnique([]), []);
 assert.deepEqual(findUnique([1]), [1]);
