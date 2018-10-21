@@ -237,8 +237,14 @@ assert.equal(isSubset(["a",1],["a",1]), true);//both arrays identical
 assert.equal(isSubset([1,2,3,4],[1,4,5]), false);//all the elements of second array are not present in first array
 assert.equal(isSubset([1,2,3,4],[1,4]), true);//all the elements of second array are present in first array
 
-assert.deepEqual(zip([1,2],[3,4]), [[1,3],[2,4]]);
-assert.deepEqual(zip(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);
+//Tests for creating a new array by joining elements of same index of two arrays :
+assert.deepEqual(zip([],[]), []);//both arrays empty
+assert.deepEqual(zip([],[1]), []);//first array empty
+assert.deepEqual(zip([1],[]), []);//second array empty
+assert.deepEqual(zip([1],[2,3]), [[1,2]]);//first array has less elements
+assert.deepEqual(zip([1,2],[3]), [[1,3]]);//second array has less elements
+assert.deepEqual(zip([1,2],[3,4]), [[1,3],[2,4]]);//both arrays have same number of elements
+assert.deepEqual(zip(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);//arrays of strings
 
 assert.deepEqual(partition([1,2,3,4,5],3), [[1,2,3],[4,5]]);
 assert.deepEqual(partition([11,29,3,40,5,9],10), [[3,5,9],[11,29,40]]);
