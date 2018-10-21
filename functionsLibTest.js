@@ -140,13 +140,15 @@ assert.deepEqual(extractDigits(1), [1]);//one digit number
 assert.deepEqual(extractDigits(12), [1,2]);//two digits number 
 assert.deepEqual(extractDigits(12345), [1,2,3,4,5]);//mutiple digits number
 
-assert.deepEqual(findUnique([]), []);
-assert.deepEqual(findUnique([1]), [1]);
-assert.deepEqual(findUnique([1,1]), [1]);
-assert.deepEqual(findUnique([1,2]), [1,2]);
-assert.deepEqual(findUnique([1,2,1]), [1,2]);
-assert.deepEqual(findUnique([1,2,3]), [1,2,3]);
-assert.deepEqual(findUnique([1,2,1,2]), [1,2]);
+//Tests for finding unique elements :
+assert.deepEqual(findUnique([]), []);//empty array
+assert.deepEqual(findUnique([1]), [1]);//one element 
+assert.deepEqual(findUnique([1,1]), [1]);//two identical elements
+assert.deepEqual(findUnique([1,2]), [1,2]);//two distinct elements
+assert.deepEqual(findUnique([1,1,1]), [1]);//three identical elements
+assert.deepEqual(findUnique([1,2,1]), [1,2]);//one distinct and two identical elements
+assert.deepEqual(findUnique([1,2,3]), [1,2,3]);//three distinct elements
+assert.deepEqual(findUnique([1,2,1,2]), [1,2]);//two pairs of identical elements
 
 assert.deepEqual(findUnique([""]), [""]);
 assert.deepEqual(findUnique(["a"]), ["a"]);
