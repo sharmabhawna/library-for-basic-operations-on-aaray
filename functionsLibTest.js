@@ -122,16 +122,17 @@ assert.equal(countNumbersGreaterThan([33,44,5,6,1],0), 5);//non-empty array and 
 
 //Tests for counting numbers lesser than a threshold :
 assert.equal(countNumbersLesserThan([],0), 0);//empty array and zero as threshold 
-assert.equal(countNumbersLesserThan([],8), 3);//empty array and non-zero threshold 
+assert.equal(countNumbersLesserThan([],8), 0);//empty array and non-zero threshold 
 assert.equal(countNumbersLesserThan([3,4,5,6,1],4), 2);//non-empty array and threshold is an element of array
 assert.equal(countNumbersLesserThan([33,44,5,6,1],0), 0);//non-empty array and threshold is not an element of array
 
-assert.equal(findIndex([3,4,5,6,1],0), -1);
-assert.equal(findIndex([3,4,5,6,1,4],4), 1);
-assert.equal(findIndex([],0), -1);
-assert.equal(findIndex([],"a"), -1);
-assert.equal(findIndex(["a","b","c","d"],"c"), 2);
-assert.equal(findIndex(["a","b","c","d"],"z"), -1);
+//Tests for finding index of an element in an array :
+assert.equal(findIndex([],0), -1);//empty array and integral element 
+assert.equal(findIndex([],"a"), -1);//empty array and string element
+assert.equal(findIndex([3,4,5,6,1],0), -1);//element(integral) is not present in array
+assert.equal(findIndex(["a","b","c","d"],"z"), -1);//element(string) is not present in array
+assert.equal(findIndex([3,4,5,6,1,4],4), 1);//element(integral) is present in array
+assert.equal(findIndex(["a","b","c","d"],"c"), 2);//element(string) is present in array
 
 assert.deepEqual(extractDigits(12345), [1,2,3,4,5]);
 assert.deepEqual(extractDigits(), []);
