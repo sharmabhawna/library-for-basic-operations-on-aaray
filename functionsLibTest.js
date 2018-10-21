@@ -168,6 +168,8 @@ assert.deepEqual(findUnion([2],[1,2]), [2,1]);//first array with one element of 
 assert.deepEqual(findUnion([1,2],[2]), [1,2]);//second array with one element of first array
 assert.deepEqual(findUnion([1,2],[1,2]), [1,2]);//both identical arrays with two elements
 assert.deepEqual(findUnion([1,2],[3,4]), [1,2,3,4]);//both distinct arrays with two elements
+assert.deepEqual(findUnion([1,2,2,3],[1,3]),[1,2,3]);
+assert.deepEqual(findUnion([1,2,2,3],[1,2]),[1,2,3]);
 
 assert.deepEqual(findUnion([""],[]), [""]);//first array with empty string and second array empty
 assert.deepEqual(findUnion([],[""]), [""]);//second array with empty string and first array empty
