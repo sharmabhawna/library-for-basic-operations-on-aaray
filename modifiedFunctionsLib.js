@@ -14,7 +14,11 @@ const reverse = function(elements){
   return elements.reduce(function(n1,n2){ return [n2].concat(n1) },[]);
 }
 
+const selectEverySecondElement = function(elements) {
+  return elements.filter(function(n,index){ return index % 2 == 0 });
+}
 exports.extractOddNumbers = extractOddNumbers;
 exports.extractEvenNumbers = extractEvenNumbers;
 exports.computeSum = computeSum;
 exports.reverse = reverse;
+exports.selectEverySecondElement = selectEverySecondElement;
