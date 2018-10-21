@@ -233,6 +233,7 @@ assert.deepEqual(findDifference(["a","b"],["c","d"]), ["a","b"]);//both distinct
 assert.equal(isSubset([],[]), true);//both arrays empty
 assert.equal(isSubset([],["a"]), false);//first array empty
 assert.equal(isSubset(["a"],[]), true);//second array empty
+assert.equal(isSubset(["a",1],["a",1]), true);//both arrays identical
 assert.equal(isSubset([1,2,3,4],[1,4,5]), false);//all the elements of second array are not present in first array
 assert.equal(isSubset([1,2,3,4],[1,4]), true);//all the elements of second array are present in first array
 
