@@ -246,7 +246,11 @@ assert.deepEqual(zip([1,2],[3]), [[1,3]]);//second array has less elements
 assert.deepEqual(zip([1,2],[3,4]), [[1,3],[2,4]]);//both arrays have same number of elements
 assert.deepEqual(zip(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);//arrays of strings
 
-assert.deepEqual(partition([1,2,3,4,5],3), [[1,2,3],[4,5]]);
+//Tests for creating partition of an array into greater and lesser number arrays :
+assert.deepEqual(partition([],5), [[],[]]);//both partitions empty
+assert.deepEqual(partition([1,2,3,4,5],10), [[1,2,3,4,5], []]);//right partition empty
+assert.deepEqual(partition([1,2,3,4,5],0), [[], [1,2,3,4,5]]);//left partition empty
+assert.deepEqual(partition([1,2,3,4,5],3), [[1,2,3],[4,5]]);//no partition empty
 assert.deepEqual(partition([11,29,3,40,5,9],10), [[3,5,9],[11,29,40]]);
 
 assert.equal(isAscending([1,2,3]), true);
