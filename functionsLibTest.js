@@ -229,9 +229,12 @@ assert.deepEqual(findDifference(["a","b"],["b"]), ["a"]);//second array with one
 assert.deepEqual(findDifference(["a","b"],["a","b"]), []);//both identical arrays with two elements(string type)
 assert.deepEqual(findDifference(["a","b"],["c","d"]), ["a","b"]);//both distinct arrays with two elements(string type)
 
-assert.equal(isSubset([1,2,3,4],[1,4]), true);
-assert.equal(isSubset([],[]), true);
-assert.equal(isSubset(["a"],[]), true);
+//Tests for finding whether an array is proper subset of another :
+assert.equal(isSubset([],[]), true);//both arrays empty
+assert.equal(isSubset([],["a"]), false);//first array empty
+assert.equal(isSubset(["a"],[]), true);//second array empty
+assert.equal(isSubset([1,2,3,4],[1,4,5]), false);//all the elements of second array are not present in first array
+assert.equal(isSubset([1,2,3,4],[1,4]), true);//all the elements of second array are present in first array
 
 assert.deepEqual(zip([1,2],[3,4]), [[1,3],[2,4]]);
 assert.deepEqual(zip(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);
