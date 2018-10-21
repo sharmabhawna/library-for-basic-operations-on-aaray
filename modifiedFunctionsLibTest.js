@@ -37,7 +37,7 @@ assert.deepEqual(extractOddNumbers([1,2]), [1]);//one even and one odd element
 assert.deepEqual(extractOddNumbers([-1,-2]), [-1]);//one even and one odd negative number
 assert.deepEqual(extractOddNumbers([-1,-2,3,6,0,9]), [-1,3,9]);//multiple mislaneous numbers
 
-////Tests for selecting even numbers :
+//Tests for selecting even numbers :
 assert.deepEqual(extractEvenNumbers([]), []);//empty array
 assert.deepEqual(extractEvenNumbers([1]), []);//one odd element
 assert.deepEqual(extractEvenNumbers([2]), [2]);//one even element
@@ -45,20 +45,20 @@ assert.deepEqual(extractEvenNumbers([1,2]), [2]);//one even and one odd element
 assert.deepEqual(extractEvenNumbers([-1,-2]), [-2]);//one even and one odd negative number
 assert.deepEqual(extractEvenNumbers([-1,-2,3,6,0,9]), [-2,6,0]);//multiple mislaneous numbers 
 
-////Tests for calculating sum of all elements of array :
+//Tests for calculating sum of all elements of array :
 assert.equal(computeSum([]), 0);//empty array 
 assert.equal(computeSum([1,2]), 3);//both positive numbers
 assert.equal(computeSum([-2,2]), 0);//one positive and one negative number
 assert.equal(computeSum([-2,-2]), -4);//both negative numbers
 
-////Tests for reversing elements of array :
-//assert.deepEqual(reverse([]), []);//empty array
-//assert.deepEqual(reverse([1]), [1]);//one element array
-//assert.deepEqual(reverse([1,1]), [1,1]);//two identical elements array
-//assert.deepEqual(reverse([1,2]), [2,1]);//integral array
-//assert.deepEqual(reverse(["a","b"]), ["b","a"]);//string array
-//assert.deepEqual(reverse(["a",3,"b"]), ["b",3,"a"]);//mislaneous array
-//
+//Tests for reversing elements of array :
+assert.deepEqual(reverse([]), []);//empty array
+assert.deepEqual(reverse([1]), [1]);//one element array
+assert.deepEqual(reverse([1,1]), [1,1]);//two identical elements array
+assert.deepEqual(reverse([1,2]), [2,1]);//integral array
+assert.deepEqual(reverse(["a","b"]), ["b","a"]);//string array
+assert.deepEqual(reverse(["a",3,"b"]), ["b",3,"a"]);//mislaneous array
+
 ////Tests for selecting every second element of array :
 //assert.deepEqual(selectEverySecondElement([]), []);//empty array
 //assert.deepEqual(selectEverySecondElement([1,2,3]), [1,3]);//integral array
