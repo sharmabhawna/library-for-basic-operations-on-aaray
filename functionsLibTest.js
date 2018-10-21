@@ -150,13 +150,14 @@ assert.deepEqual(findUnique([1,2,1]), [1,2]);//one distinct and two identical el
 assert.deepEqual(findUnique([1,2,3]), [1,2,3]);//three distinct elements
 assert.deepEqual(findUnique([1,2,1,2]), [1,2]);//two pairs of identical elements
 
-assert.deepEqual(findUnique([""]), [""]);
-assert.deepEqual(findUnique(["a"]), ["a"]);
-assert.deepEqual(findUnique(["a","a"]), ["a"]);
-assert.deepEqual(findUnique(["a","b"]), ["a","b"]);
-assert.deepEqual(findUnique(["a","b","a"]), ["a","b"]);
-assert.deepEqual(findUnique(["a","b","c"]), ["a","b","c"]);
-assert.deepEqual(findUnique(["a","b","a","b"]), ["a","b"]);
+assert.deepEqual(findUnique([""]), [""]);//empty string array
+assert.deepEqual(findUnique(["a"]), ["a"]);//one element 
+assert.deepEqual(findUnique(["a","a"]), ["a"]);//two identical elements
+assert.deepEqual(findUnique(["a","b"]), ["a","b"]);//two distinct elements
+assert.deepEqual(findUnique(["a","a","a"]), ["a"]);//three identical elements
+assert.deepEqual(findUnique(["a","b","a"]), ["a","b"]);//one distinct and two identical elements
+assert.deepEqual(findUnique(["a","b","c"]), ["a","b","c"]);//three distinct elements
+assert.deepEqual(findUnique(["a","b","a","b"]), ["a","b"]);//two pairs of identical elements
 
 assert.deepEqual(findUnion([],[]), []);
 assert.deepEqual(findUnion([1],[]), [1]);
