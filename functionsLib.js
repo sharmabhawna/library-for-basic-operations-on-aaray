@@ -198,7 +198,11 @@ const isSubset = function(superSet, subSet){
 
 const zip = function(firstArray, secondArray){
   let result = [];
-  for(let index = 0; index < secondArray.length; index++){
+  let length = firstArray.length;
+  if(secondArray.length < length){
+    length = secondArray.length;
+  }
+  for(let index = 0; index < length; index++){
     result[index] = [firstArray[index],secondArray[index]];
   }
   return result;
