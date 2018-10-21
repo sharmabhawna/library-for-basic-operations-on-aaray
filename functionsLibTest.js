@@ -205,10 +205,29 @@ assert.deepEqual(findIntersection(["a","b"],["b"]), ["b"]);//second array with o
 assert.deepEqual(findIntersection(["a","b"],["a","b"]), ["a","b"]);//both identical arrays with two elements(string type)
 assert.deepEqual(findIntersection(["a","b"],["c","d"]), []);//both distinct arrays with two elements(string type)
 
-
-
+//Tests for finding difference of two arrays :
+assert.deepEqual(findDifference([],[]), []);//both arrays empty
+assert.deepEqual(findDifference([1],[1]), []);//second array empty
+assert.deepEqual(findDifference([],[1]), []);//first array empty
+assert.deepEqual(findDifference([1],[1]), []);//both arrays with one element(identical)
+assert.deepEqual(findDifference([2],[1,2]), []);//first array with one element of second array
+assert.deepEqual(findDifference([1,2],[2]), [1]);//second array with one element of first array
+assert.deepEqual(findDifference([1,2],[1,2]), []);//both identical arrays with two elements
+assert.deepEqual(findDifference([1,2],[3,4]), [1,2]);//both distinct arrays with two elements
 assert.deepEqual(findDifference([1,2,3,3],[1,2]), [3]);
+assert.deepEqual(findDifference([1,2,3,3],[1,3]), [2]);
 assert.deepEqual(findDifference([1,2,3,3],[3,4]), [1,2]);
+
+assert.deepEqual(findDifference([""],[]), [""]);//first array with empty string and second array empty
+assert.deepEqual(findDifference([],[""]), []);//second array with empty string and first array empty
+assert.deepEqual(findDifference([""],[""]), []);//both arrays with empty string
+assert.deepEqual(findDifference(["a"],[]), ["a"]);//first array with non-empty string and second array empty
+assert.deepEqual(findDifference([],["a"]), []);//second array with non-empty string and first array empty
+assert.deepEqual(findDifference(["a"],["a"]), []);//both arrays with non-empty string
+assert.deepEqual(findDifference(["b"],["a","b"]), []);//first array with one element of second array(string type)
+assert.deepEqual(findDifference(["a","b"],["b"]), ["a"]);//second array with one element of first array(string type)
+assert.deepEqual(findDifference(["a","b"],["a","b"]), []);//both identical arrays with two elements(string type)
+assert.deepEqual(findDifference(["a","b"],["c","d"]), ["a","b"]);//both distinct arrays with two elements(string type)
 
 assert.equal(isSubset([1,2,3,4],[1,4]), true);
 assert.equal(isSubset([],[]), true);
@@ -219,7 +238,6 @@ assert.deepEqual(zip(["a","b","c"],["i","l"]), [["a","i"],["b","l"]]);
 
 assert.deepEqual(partition([1,2,3,4,5],3), [[1,2,3],[4,5]]);
 assert.deepEqual(partition([11,29,3,40,5,9],10), [[3,5,9],[11,29,40]]);
-
 
 assert.equal(isAscending([1,2,3]), true);
 assert.equal(isAscending([3,2,1]), false);
