@@ -1,19 +1,3 @@
-const segregateEvenOdd = function(numbers){
-  let segregatedNumbers = { evenNumbers : [], oddNumbers : [] }
-  let selectKey = { true : "evenNumbers", false : "oddNumbers" };
-  
-  for(let index = 0; index < numbers.length; index++){
-    let key = selectKey[isEven(numbers[index])];
-    segregatedNumbers[key].push(numbers[index]);
-  }
-  
-  return segregatedNumbers;
-}
-
-const isEven = function(number){
-  return (number % 2 == 0);
-}
-
 const extractEvenNumbers = function(numbers){
   const isEven = function (number) { return number % 2 == 0 } ;
   return numbers.filter(isEven);
