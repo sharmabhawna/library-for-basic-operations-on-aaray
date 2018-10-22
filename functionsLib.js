@@ -15,7 +15,7 @@ const isEven = function(number){
 }
 
 const extractEvenNumbers = function(numbers){
-  return segregateEvenOdd(numbers)["evenNumbers"];
+  return numbers.filter( function (n) { return n % 2 == 0 } );
 }
 
 const extractOddNumbers = function(numbers){
