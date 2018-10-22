@@ -27,11 +27,8 @@ const computeSum = function(numbers){
 }
 
 const reverse = function(elements){
-  let result = [];
-  for(let index = elements.length-1; index >= 0; index--){
-    result.push(elements[index]);
-  }
-  return result;
+  return elements.reduce( function (array, element) { array.unshift(element); return array }, [] );
+
 }
 
 const selectEverySecondElement = function(elements){
