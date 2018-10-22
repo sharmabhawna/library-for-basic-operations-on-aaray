@@ -1,11 +1,12 @@
-const extractEvenNumbers = function(numbers){
-  const isEven = function (number) { return number % 2 == 0 } ;
-  return numbers.filter(isEven);
+const isEven = function (number) { return number % 2 == 0 } ;
 
+const isOdd = function (number) { return number % 2 } ;
+
+const extractEvenNumbers = function(numbers){
+  return numbers.filter(isEven);
 }
 
 const extractOddNumbers = function(numbers){
-  const isOdd = function (number) { return number % 2 } ;
   return numbers.filter(isOdd);
 }
 
