@@ -23,11 +23,7 @@ const extractOddNumbers = function(numbers){
 }
 
 const computeSum = function(numbers){
-  let sum = 0;
-  for(let index = 0; index < numbers.length; index++){
-    sum = sum + numbers[index];
-  }
-  return sum;
+  return numbers.reduce( function (num1, num2) { return num1 + num2 }, 0 );
 }
 
 const reverse = function(elements){
