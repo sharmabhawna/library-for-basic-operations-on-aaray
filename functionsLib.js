@@ -11,7 +11,7 @@ const extractOddNumbers = function(numbers){
 }
 
 const computeSum = function(numbers){
-  return numbers.reduce( function (num1, num2) { return num1 + num2 }, 0 );
+  return numbers.reduce( function (accumulator, currentValue) { return accumulator + currentValue }, 0 );
 }
 
 const reverse = function(elements){
@@ -49,9 +49,9 @@ const generateReverseFibonacci = function(length){
   return reverse(fibonacci);
 }
 
-const extractGreaterNumber = function(n1, n2) {
-  if(n1 > n2){ return n1 };
-  return n2;
+const extractGreaterNumber = function(accumulator, currentValue) {
+  if(accumulator > currentValue){ return accumulator };
+  return currentValue;
 }
 
 const extractGreatestNumber = function(numbers) {
@@ -59,8 +59,8 @@ const extractGreatestNumber = function(numbers) {
   return numbers.reduce(extractGreaterNumber);
 }
 
-const extractLesserNumber = function(preValue, currValue) {
-  if(preValue < currValue) { return preValue };
+const extractLesserNumber = function(accumulator, currValue) {
+  if(accumulator < currValue) { return accumulator };
   return currValue;
 }
 
