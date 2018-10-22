@@ -55,20 +55,18 @@ const extractGreaterNumber = function(n1, n2) {
 }
 
 const extractGreatestNumber = function(numbers) {
-  if(numbers.length == 0){
-    return 0;
-  }
+  if(numbers.length == 0) { return 0 };
   return numbers.reduce(extractGreaterNumber);
 }
 
+const extractLesserNumber = function(preValue, currValue) {
+  if(preValue < currValue) { return preValue };
+  return currValue;
+}
+
 const extractSmallestNumber = function(numbers){
-  let lowestNumber = numbers[0];
-  for(let index = 1; index < numbers.length; index++){
-    if(numbers[index] < lowestNumber){
-      lowestNumber = numbers[index];
-    }
-  }
-  return lowestNumber;
+  if(numbers.length == 0) { return 0 };
+  return numbers.reduce(extractLesserNumber);
 }
 
 const computeAverage = function(numbers){

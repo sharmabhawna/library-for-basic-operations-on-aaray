@@ -78,7 +78,7 @@ assert.equal(extractGreatestNumber([-1.5,-2,-10]), -1.5);//negative numbers
 assert.equal(extractGreatestNumber([10,12.5,-5,-1.5,3.5]), 12.5);//mislaneous 
 
 //Tests for finding smallest number of array :
-assert.equal(extractSmallestNumber([]), );//empty array
+assert.equal(extractSmallestNumber([]), 0);//empty array
 assert.equal(extractSmallestNumber([1.5,2,10]), 1.5);//postive numbers
 assert.equal(extractSmallestNumber([-10,-2,-5.5]), -10);//negative numbers
 assert.equal(extractSmallestNumber([-10,2,-2,5,-5.5]), -10);//mislaneous
