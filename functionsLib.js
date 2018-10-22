@@ -30,7 +30,6 @@ const computeSum = function(numbers){
   return sum;
 }
 
-
 const reverse = function(elements){
   let result = [];
   for(let index = elements.length-1; index >= 0; index--){
