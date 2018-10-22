@@ -19,7 +19,7 @@ const extractEvenNumbers = function(numbers){
 }
 
 const extractOddNumbers = function(numbers){
-  return segregateEvenOdd(numbers)["oddNumbers"];
+  return numbers.filter( function (n) { return n % 2 } );
 }
 
 const computeSum = function(numbers){
