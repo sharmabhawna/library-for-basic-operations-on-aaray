@@ -21,7 +21,8 @@ const extractEvenNumbers = function(numbers){
 }
 
 const extractOddNumbers = function(numbers){
-  return numbers.filter( function (n) { return n % 2 } );
+  const isOdd = function (number) { return number % 2 } ;
+  return numbers.filter(isOdd);
 }
 
 const computeSum = function(numbers){
