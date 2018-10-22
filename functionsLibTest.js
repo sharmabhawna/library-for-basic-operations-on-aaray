@@ -5,7 +5,7 @@ const { extractEvenNumbers,
   extractOddNumbers,
   computeSum,
   reverse,
-  selectEverySecondElement,
+  extractEverySecondElement,
   generateReverseFibonacci,
   extractGreatestNumber,
   extractSmallestNumber,
@@ -59,11 +59,11 @@ assert.deepEqual(reverse([1,2]), [2,1]);//integral array
 assert.deepEqual(reverse(["a","b"]), ["b","a"]);//string array
 assert.deepEqual(reverse(["a",3,"b"]), ["b",3,"a"]);//mislaneous array
 
-//Tests for selecting every second element of array :
-assert.deepEqual(selectEverySecondElement([]), []);//empty array
-assert.deepEqual(selectEverySecondElement([1,2,3]), [1,3]);//integral array
-assert.deepEqual(selectEverySecondElement(["a","b","c"]), ["a","c"]);//strings array
-assert.deepEqual(selectEverySecondElement([1,"a","b",4,5]), [1,"b",5]);//mislaneous array
+//Tests for extracting every second element of array :
+assert.deepEqual(extractEverySecondElement([]), []);//empty array
+assert.deepEqual(extractEverySecondElement([1,2,3]), [1,3]);//integral array
+assert.deepEqual(extractEverySecondElement(["a","b","c"]), ["a","c"]);//strings array
+assert.deepEqual(extractEverySecondElement([1,"a","b",4,5]), [1,"b",5]);//mislaneous array
 
 //Tests for generating reverse fibonacci series :
 assert.deepEqual(generateReverseFibonacci(0), []);
@@ -267,8 +267,5 @@ assert.equal(isDescending([3,1,2]), false);
 assert.equal(isDescending([3,2,1]), true);
 assert.equal(isDescending([1,2,3]), false);
 
-
 assert.deepEqual(rotate([1,2,3,4], 2), [4,1,2,3]);
 assert.deepEqual(rotate(["a","b","c","d","e"],1), ["c","d","e","a","b"]);
-
-

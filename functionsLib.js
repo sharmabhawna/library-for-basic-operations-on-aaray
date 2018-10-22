@@ -18,7 +18,7 @@ const reverse = function(elements){
   return elements.reduce( function (array, element) { array.unshift(element); return array }, [] );
 }
 
-const selectEveryNthElement = function(state, element) {
+const extractEveryNthElement = function(state, element) {
   let { index, count, elements } = state;
   if( index % count == 0){
     elements.push(element);
@@ -27,8 +27,8 @@ const selectEveryNthElement = function(state, element) {
   return { index, count , elements };
 }
 
-const selectEverySecondElement = function(elements){
-  return elements.reduce(selectEveryNthElement, { index : 0, count : 2, elements : [] } ).elements;
+const extractEverySecondElement = function(elements){
+  return elements.reduce(extractEveryNthElement, { index : 0, count : 2, elements : [] } ).elements;
 }
 
 const generateFibonacci = function(length){
@@ -237,7 +237,7 @@ exports.extractEvenNumbers = extractEvenNumbers;
 exports.extractOddNumbers = extractOddNumbers;
 exports.computeSum = computeSum;
 exports.reverse = reverse;
-exports.selectEverySecondElement = selectEverySecondElement;
+exports.extractEverySecondElement = extractEverySecondElement;
 exports.generateReverseFibonacci = generateReverseFibonacci;
 exports.extractGreatestNumber = extractGreatestNumber;
 exports.extractSmallestNumber = extractSmallestNumber;
