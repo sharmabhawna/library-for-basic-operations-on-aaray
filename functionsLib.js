@@ -49,14 +49,16 @@ const generateReverseFibonacci = function(length){
   return reverse(fibonacci);
 }
 
-const extractGreatestNumber = function(numbers){
-  let greatestNumber = numbers[0];
-  for(let index = 1; index < numbers.length; index++){
-    if(numbers[index] > greatestNumber){
-      greatestNumber = numbers[index];
-    }
+const extractGreaterNumber = function(n1, n2) {
+  if(n1 > n2){ return n1 };
+  return n2;
+}
+
+const extractGreatestNumber = function(numbers) {
+  if(numbers.length == 0){
+    return 0;
   }
-  return greatestNumber;
+  return numbers.reduce(extractGreaterNumber);
 }
 
 const extractSmallestNumber = function(numbers){

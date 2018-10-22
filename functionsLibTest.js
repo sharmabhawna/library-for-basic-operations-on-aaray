@@ -72,7 +72,7 @@ assert.deepEqual(generateReverseFibonacci(5), [3,2,1,1,0]);
 assert.deepEqual(generateReverseFibonacci(8), [13,8,5,3,2,1,1,0]);
 
 //Tests for finding greatest number of array :
-assert.equal(extractGreatestNumber([]), );//empty array
+assert.equal(extractGreatestNumber([]), 0);//empty array
 assert.equal(extractGreatestNumber([1,2.5,10]), 10);//positive numbers
 assert.equal(extractGreatestNumber([-1.5,-2,-10]), -1.5);//negative numbers
 assert.equal(extractGreatestNumber([10,12.5,-5,-1.5,3.5]), 12.5);//mislaneous 
