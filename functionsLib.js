@@ -15,7 +15,9 @@ const isEven = function(number){
 }
 
 const extractEvenNumbers = function(numbers){
-  return numbers.filter( function (n) { return n % 2 == 0 } );
+  const isEven = function (number) { return number % 2 == 0 } ;
+  return numbers.filter(isEven);
+
 }
 
 const extractOddNumbers = function(numbers){
@@ -28,7 +30,6 @@ const computeSum = function(numbers){
 
 const reverse = function(elements){
   return elements.reduce( function (array, element) { array.unshift(element); return array }, [] );
-
 }
 
 const selectAlternateElement = function(state, element) {
