@@ -31,12 +31,17 @@ const reverse = function(elements){
 
 }
 
+const selectAlternateElement = function(state, element) {
+  let { index, count, elements } = state;
+  if( index % count == 0){
+    elements.push(element);
+  }
+    index = index + 1;
+  return { index, count , elements };
+}
+
 const selectEverySecondElement = function(elements){
-  let result = [];
-  for(let index = 0; index < elements.length; index+=2){
-      result.push(elements[index]);
-    }
-  return result;
+  return elements.reduce(selectAlternateElement, { index : 0, count : 2, elements : [] } ).elements;
 }
 
 const generateFibonacci = function(length){
