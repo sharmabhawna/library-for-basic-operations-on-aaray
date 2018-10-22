@@ -18,7 +18,7 @@ const reverse = function(elements){
   return elements.reduce( function (array, element) { array.unshift(element); return array }, [] );
 }
 
-const selectAlternateElement = function(state, element) {
+const selectEveryNthElement = function(state, element) {
   let { index, count, elements } = state;
   if( index % count == 0){
     elements.push(element);
@@ -28,7 +28,7 @@ const selectAlternateElement = function(state, element) {
 }
 
 const selectEverySecondElement = function(elements){
-  return elements.reduce(selectAlternateElement, { index : 0, count : 2, elements : [] } ).elements;
+  return elements.reduce(selectEveryNthElement, { index : 0, count : 2, elements : [] } ).elements;
 }
 
 const generateFibonacci = function(length){
@@ -43,7 +43,7 @@ const generateFibonacci = function(length){
   }
   return result;
 }
- 
+
 const generateReverseFibonacci = function(length){
   let fibonacci = generateFibonacci(length);
   return reverse(fibonacci);
