@@ -59,9 +59,9 @@ const extractGreatestNumber = function(numbers) {
   return numbers.reduce(extractGreaterNumber);
 }
 
-const extractLesserNumber = function(accumulator, currValue) {
-  if(accumulator < currValue) { return accumulator };
-  return currValue;
+const extractLesserNumber = function(accumulator, currentValue) {
+  if(accumulator < currentValue) { return accumulator };
+  return currentValue;
 }
 
 const extractSmallestNumber = function(numbers){
