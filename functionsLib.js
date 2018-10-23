@@ -78,12 +78,12 @@ const computeAverage = function(numbers){
   return sum/numberOfElements;
 }
 
-const mapLengths = function(stringsArray){
-  let result = [];
-  for(let index = 0; index < stringsArray.length; index++){
-    result.push(stringsArray[index].length);
-  }
-  return result;
+const length = function(string){
+  return string.length;
+}
+
+const mapLengths = function(strings){
+  return strings.map(length);
 }
 
 const countOddNumbers = function(numbers){
