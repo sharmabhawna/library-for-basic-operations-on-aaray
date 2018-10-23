@@ -142,15 +142,15 @@ const extractDigits = function(number){
   return digits;
 }
 
-const findUnique = function(elements){
-  let uniqueElements = [];
-  for(let index = 0; index < elements.length; index++){
-    let hasElement = uniqueElements.includes(elements[index]);
-    if(!hasElement){
-      uniqueElements.push(elements[index]);
-    }
+const insertUniqueElement = function(array, element) {
+  if(!array.includes(element)){
+    array.push(element);
   }
-  return uniqueElements;
+    return array;
+}
+
+const findUnique = function(elements){
+  return elements.reduce(insertUniqueElement, []);
 }
 
 const findUnion = function(firstArray, secondArray){
