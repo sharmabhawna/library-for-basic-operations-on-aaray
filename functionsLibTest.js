@@ -15,7 +15,7 @@ const { extractEvenNumbers,
   countEvenNumbers,
   countNumbersGreaterThan,
   countNumbersLesserThan ,
-  findIndex,
+  findFirstIndex,
   extractDigits,
   findUnique,
   findUnion,
@@ -127,12 +127,12 @@ assert.equal(countNumbersLesserThan([3,4,5,6,1],4), 2);//non-empty array and thr
 assert.equal(countNumbersLesserThan([33,44,5,6,1],0), 0);//non-empty array and threshold is not an element of array
 
 //Tests for finding index of an element in an array :
-assert.equal(findIndex([],0), -1);//empty array and integral element 
-assert.equal(findIndex([],"a"), -1);//empty array and string element
-assert.equal(findIndex([3,4,5,6,1],0), -1);//element(integral) is not present in array
-assert.equal(findIndex(["a","b","c","d"],"z"), -1);//element(string) is not present in array
-assert.equal(findIndex([3,4,5,6,1,4],4), 1);//element(integral) is present in array
-assert.equal(findIndex(["a","b","c","d"],"c"), 2);//element(string) is present in array
+assert.equal(findFirstIndex([],0), -1);//empty array and integral element 
+assert.equal(findFirstIndex([],"a"), -1);//empty array and string element
+assert.equal(findFirstIndex([3,4,5,6,1],0), -1);//element(integral) is not present in array
+assert.equal(findFirstIndex(["a","b","c","d"],"z"), -1);//element(string) is not present in array
+assert.equal(findFirstIndex([3,4,5,6,1,4],4), 1);//element(integral) is present in array
+assert.equal(findFirstIndex(["a","b","c","d"],"c"), 2);//element(string) is present in array
 
 //Tests for extracting digits of a numbers into an array :
 assert.deepEqual(extractDigits(), []);//number is not given

@@ -105,18 +105,22 @@ const countNumbersLesserThan = function(array, number){
   return lesserNumbers.length;
 }
 
-
-const findIndex = function(array, element){
-  let result = -1;
-  for(let index = 0; index < array.length; index++){
-    if(array[index] == element){
-      result = index;
-    }
-    if(result != -1){
-      return result;
-    }
+const findEveryIndex = function(object, currentElement) {
+  let {currentIndex, index, element } = object;
+  currentIndex = currentIndex + 1;
+  if(element == currentElement){
+    index.push(currentIndex);
+    return { index , currentIndex, element };
   }
-  return result;
+  return { currentIndex, index, element }
+}
+
+const findFirstIndex = function(array, element){
+  let  indexes = array.reduce(findEveryIndex, { currentIndex : -1, index : [], element : element } ).index;
+  if(indexes.length == 0){
+    return -1;
+  }
+  return indexes[0];
 }
 
 const extractDigits = function(number){
@@ -243,7 +247,7 @@ exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;
 exports.countNumbersGreaterThan = countNumbersGreaterThan;
 exports.countNumbersLesserThan = countNumbersLesserThan;
-exports.findIndex = findIndex;
+exports.findFirstIndex = findFirstIndex;
 exports.extractDigits = extractDigits;
 exports.findUnique = findUnique;
 exports.findUnion = findUnion;
