@@ -10,8 +10,12 @@ const extractOddNumbers = function(numbers){
   return numbers.filter(isOdd);
 }
 
+const add = function(firstNum, secondNum) {
+  return firstNum + secondNum;
+}
+
 const computeSum = function(numbers){
-  return numbers.reduce( function (accumulator, currentValue) { return accumulator + currentValue }, 0 );
+  return numbers.reduce( add , 0);
 }
 
 const reverse = function(elements){
