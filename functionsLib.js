@@ -153,11 +153,14 @@ const findUnique = function(elements){
   return elements.reduce(insertUniqueElement, []);
 }
 
+const insertAtEnd = function(array, element){
+  array.push(element);
+  return array;
+}
+
 const findUnion = function(firstArray, secondArray){
-  for(let index = 0; index < secondArray.length; index++){
-    firstArray.push(secondArray[index]);
-  }
-  return findUnique(firstArray);
+  let joinedArray = secondArray.reduce( insertAtEnd, firstArray);
+  return findUnique(joinedArray);
 }
 
 const findIntersection = function(firstArray, secondArray){
