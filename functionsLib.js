@@ -18,8 +18,13 @@ const computeSum = function(numbers){
   return numbers.reduce( add , 0);
 }
 
+const insertAtStart = function (array, element) {
+  array.unshift(element);
+  return array ;
+}
+
 const reverse = function(elements){
-  return elements.reduce( function (array, element) { array.unshift(element); return array }, [] );
+  return elements.reduce( insertAtStart, []);
 }
 
 const extractEveryNthElement = function(state, element) {
