@@ -162,7 +162,7 @@ const findUnion = function(firstArray, secondArray){
   return findUnique(joinedArray);
 }
 
-const insertIdenticalElement = function(accumulator, element) {
+const extractIdenticalElement = function(accumulator, element) {
   let { firstArray, identicalElements } = accumulator;
   if(firstArray.includes(element)){
     identicalElements.push(element);
@@ -171,7 +171,7 @@ const insertIdenticalElement = function(accumulator, element) {
 }
 
 const findIntersection = function(firstArray, secondArray){
-  return  secondArray.reduce(insertIdenticalElement, { firstArray : firstArray, identicalElements : [] }).identicalElements;
+  return  secondArray.reduce(extractIdenticalElement, { firstArray : firstArray, identicalElements : [] }).identicalElements;
 }
 
 const findDifference = function(firstArray, secondArray){
