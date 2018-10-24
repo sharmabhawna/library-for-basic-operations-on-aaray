@@ -47,6 +47,7 @@ assert.deepEqual(extractEvenNumbers([-1,-2,3,6,0,9]), [-2,6,0]);//multiple misla
 
 //Tests for calculating sum of all elements of array :
 assert.equal(computeSum([]), 0);//empty array 
+assert.equal(computeSum([1]), 1);//one element array 
 assert.equal(computeSum([1,2]), 3);//both positive numbers
 assert.equal(computeSum([-2,2]), 0);//one positive and one negative number
 assert.equal(computeSum([-2,-2]), -4);//both negative numbers
