@@ -92,6 +92,8 @@ assert.equal(extractSmallestNumber([-10,2,-2,5,-5.5]), -10);//mislaneous
 
 //Tests for calculating average of all elements of array :
 assert.equal(computeAverage([]), 0);//empty array
+assert.equal(computeAverage([1]), 1);//one element array
+assert.equal(computeAverage([1,3]), 2);//two elements array
 assert.equal(computeAverage([1,2,3]), 2);//positive numbers
 assert.equal(computeAverage([-60,-60,-60]), -60);//negative numbers
 assert.equal(computeAverage([-60,60,-60,60]), 0);//negative numbers
