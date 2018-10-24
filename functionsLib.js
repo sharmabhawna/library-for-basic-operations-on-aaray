@@ -170,18 +170,20 @@ const extractIdenticalElements = function(accumulator, element) {
   return { array, identicalElements };
 }
 
+extractDifferentElements = function(accumulator, element) {
+  let { array, differentElements } = accumulator;
+  if(!array.includes(element)){
+    differentElements.push(element);
+  }
+  return { array, differentElements };
+}
+
 const findIntersection = function(firstArray, secondArray){
   return  secondArray.reduce(extractIdenticalElements, { array : firstArray, identicalElements : [] }).identicalElements;
 }
 
 const findDifference = function(firstArray, secondArray){
-  let result = [];
-  for(let index = 0; index < firstArray.length; index++){
-    if(!secondArray.includes(firstArray[index])){
-      result.push(firstArray[index]);
-    }
-  }
-  return findUnique(result);
+  return findUnique(firstArray.reduce(extractDifferentElements, { array : secondArray, differentElements : [] }).differentElements);
 }
 
 const isSubset = function(superSet, subSet){
