@@ -114,7 +114,7 @@ const countNumbersLesserThan = function(array, number){
   return lesserNumbers.length;
 }
 
-const findEveryIndex = function(object, currentElement) {
+const findEveryIndex = function(stats, currentElement) {
   let {currentIndex, index, element } = object;
   currentIndex = currentIndex + 1;
   if(element == currentElement){
