@@ -267,5 +267,5 @@ assert.equal(isDescending([3,1,2]), false);
 assert.equal(isDescending([3,2,1]), true);
 assert.equal(isDescending([1,2,3]), false);
 
-assert.deepEqual(rotate([1,2,3,4], 2), [4,1,2,3]);
-assert.deepEqual(rotate(["a","b","c","d","e"],1), ["c","d","e","a","b"]);
+assert.deepEqual(rotate([1,2,3,4], 2), [3,4,1,2]);
+assert.deepEqual(rotate(["a","b","c","d","e"],1), ["b", "c", "d", "e", "a"]);

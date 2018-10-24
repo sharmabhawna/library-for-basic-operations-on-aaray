@@ -246,15 +246,12 @@ const isDescending = function(array){
   return true;
 }
 
-const rotate = function(elements, index){
-  let result = [];
-  for(let i = index+1; i < elements.length; i++){
-    result.push(elements[i]);
+const rotate = function(elements, times){
+  for(let count = 0; count < times; count++){
+    let firstElement = elements.shift();
+    elements.push(firstElement);
   }
-  for(let j = 0; j <= index; j++){
-    result.push(elements[j]);
-  }
-  return result;
+  return elements;
 }
 
 exports.extractEvenNumbers = extractEvenNumbers;
