@@ -143,7 +143,7 @@ const extractDigits = function(number){
   return digits;
 }
 
-const extractUniqueElements = function(array, element) 
+const extractUniqueElements = function(array, element) {
   if(!array.includes(element)){
     array.push(element);
   }
@@ -199,16 +199,18 @@ const isSubset = function(superSet, subSet){
   return true;
 }
 
+const joinElements = function(accumulator, element) {
+  let { array , index, result } = accumulator;
+  result.push([array[index], element]);  
+  index = index+1;
+  return { array, index, result };
+}
+
 const zip = function(firstArray, secondArray){
-  let result = [];
-  let length = firstArray.length;
-  if(secondArray.length < length){
-    length = secondArray.length;
-  }
-  for(let index = 0; index < length; index++){
-    result[index] = [firstArray[index],secondArray[index]];
-  }
-  return result;
+  let minLength = (firstArray.length < secondArray.length) ? firstArray.length : secondArray.length;
+  let shorterArray = secondArray.slice(0, minLength);
+  let initialValue = { array : firstArray, index : 0, result : [] };
+  return shorterArray.reduce(joinElements, initialValue).result;
 }
 
 const partition = function(array,number){
