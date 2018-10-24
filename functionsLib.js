@@ -247,6 +247,9 @@ const isDescending = function(array){
 }
 
 const rotate = function(elements, times){
+  if(elements.length == 0){
+    return [];
+  }
   for(let count = 0; count < times; count++){
     let firstElement = elements.shift();
     elements.push(firstElement);
