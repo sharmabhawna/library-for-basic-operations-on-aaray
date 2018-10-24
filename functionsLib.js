@@ -143,7 +143,7 @@ const extractDigits = function(number){
   return digits;
 }
 
-const insertUniqueElement = function(array, element) {
+const extractUniqueElements = function(array, element) 
   if(!array.includes(element)){
     array.push(element);
   }
@@ -151,7 +151,7 @@ const insertUniqueElement = function(array, element) {
 }
 
 const findUnique = function(elements){
-  return elements.reduce(insertUniqueElement, []);
+  return elements.reduce(extractUniqueElements, []);
 }
 
 const insertAtEnd = function(array, element){
