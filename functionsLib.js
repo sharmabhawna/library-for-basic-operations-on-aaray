@@ -37,7 +37,8 @@ const extractEveryNthElement = function(state, element) {
 }
 
 const extractEverySecondElement = function(elements){
-  return elements.reduce(extractEveryNthElement, { index : 0, count : 2, elements : [] } ).elements;
+  let state = { index : 0, count : 2, elements : [] };
+  return elements.reduce(extractEveryNthElement, state).elements;
 }
 
 const generateFibonacci = function(length){
@@ -124,7 +125,8 @@ const findEveryIndex = function(stats, currentElement) {
 }
 
 const findFirstIndex = function(array, element){
-  let  indexes = array.reduce(findEveryIndex, { currentIndex : -1, index : [], element : element } ).index;
+  let stats = { currentIndex : -1, index : [], element : element };
+  let  indexes = array.reduce(findEveryIndex, stats).index;
   if(indexes.length == 0){
     return -1;
   }
@@ -179,11 +181,13 @@ extractDifferentElements = function(accumulator, element) {
 }
 
 const findIntersection = function(firstArray, secondArray){
-  return  secondArray.reduce(extractIdenticalElements, { array : firstArray, identicalElements : [] }).identicalElements;
+  let initialValue = { array : firstArray, identicalElements : [] };
+  return  secondArray.reduce(extractIdenticalElements, initialValue).identicalElements;
 }
 
 const findDifference = function(firstArray, secondArray){
-  return findUnique(firstArray.reduce(extractDifferentElements, { array : secondArray, differentElements : [] }).differentElements);
+  let initialValue = { array : secondArray, differentElements : [] };
+  return findUnique(firstArray.reduce(extractDifferentElements, initialValue).differentElements);
 }
 
 const isSubset = function(superSet, subSet){
