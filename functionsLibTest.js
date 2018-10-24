@@ -62,6 +62,8 @@ assert.deepEqual(reverse(["a",3,"b"]), ["b",3,"a"]);//mislaneous array
 
 //Tests for extracting every second element of array :
 assert.deepEqual(extractEverySecondElement([]), []);//empty array
+assert.deepEqual(extractEverySecondElement([1]), [1]);//one element array
+assert.deepEqual(extractEverySecondElement([1,2]), [1]);//two elements array
 assert.deepEqual(extractEverySecondElement([1,2,3]), [1,3]);//integral array
 assert.deepEqual(extractEverySecondElement(["a","b","c"]), ["a","c"]);//strings array
 assert.deepEqual(extractEverySecondElement([1,"a","b",4,5]), [1,"b",5]);//mislaneous array
