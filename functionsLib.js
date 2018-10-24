@@ -162,16 +162,16 @@ const findUnion = function(firstArray, secondArray){
   return findUnique(joinedArray);
 }
 
-const extractIdenticalElement = function(accumulator, element) {
-  let { firstArray, identicalElements } = accumulator;
-  if(firstArray.includes(element)){
+const extractIdenticalElements = function(accumulator, element) {
+  let { array, identicalElements } = accumulator;
+  if(array.includes(element)){
     identicalElements.push(element);
   }
-  return { firstArray, identicalElements };
+  return { array, identicalElements };
 }
 
 const findIntersection = function(firstArray, secondArray){
-  return  secondArray.reduce(extractIdenticalElement, { firstArray : firstArray, identicalElements : [] }).identicalElements;
+  return  secondArray.reduce(extractIdenticalElements, { array : firstArray, identicalElements : [] }).identicalElements;
 }
 
 const findDifference = function(firstArray, secondArray){
