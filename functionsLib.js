@@ -119,7 +119,6 @@ const findEveryIndex = function(object, currentElement) {
   currentIndex = currentIndex + 1;
   if(element == currentElement){
     index.push(currentIndex);
-    return { index , currentIndex, element };
   }
   return { currentIndex, index, element }
 }
