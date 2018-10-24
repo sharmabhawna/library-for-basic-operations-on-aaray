@@ -213,16 +213,19 @@ const zip = function(firstArray, secondArray){
   return shorterArray.reduce(joinElements, initialValue).result;
 }
 
-const partition = function(array,number){
-  let result = [[],[]];
-  for(let index = 0; index < array.length; index++){
-    let requiredIndex = 1;
-    if(array[index] <= number){
-      requiredIndex = 0;
-    }
-    result[requiredIndex].push(array[index]);
+const segregateGreaterLesser = function(accumulator, currentValue) {
+  let { threshold , result } = accumulator;
+  let index = 0;
+  if(currentValue > threshold){
+    index = 1;
   }
-  return result;
+  result[index].push(currentValue);
+  return { threshold, result };
+}
+
+const partition = function(array, threshold){
+  let initialValue = { threshold : threshold, result : [[], []] };
+  return array.reduce(segregateGreaterLesser, initialValue).result;
 }
 
 const isAscending = function(array){
